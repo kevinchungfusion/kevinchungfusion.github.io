@@ -102,6 +102,17 @@
   }
   .btn:hover { filter: brightness(1.1); }
 
+  /* Project grid */
+  .year { font-size: 1.25rem; margin: 48px 0 16px; padding-top: 16px; border-top: 2px solid var(--green); color: var(--green); }
+  .grid { display: grid; gap: 28px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+  .card .shot { aspect-ratio: 4 / 3; }
+  .card-body { position: relative; padding: 12px 0 0 34px; }
+  .num { position: absolute; left: 0; top: 12px; font-weight: 800; font-size: 1.35rem; line-height: 1.2; color: var(--green); }
+  .card h4 { margin: 0; font-size: 1.15rem; line-height: 1.3; }
+  .note { margin: 2px 0 0; color: var(--muted); font-size: .95rem; }
+  .soon { display: inline-block; margin-top: 10px; font-size: .85rem; background: var(--tape); color: #18201b; padding: 1px 8px; transform: rotate(-1deg); }
+  .card .btn { margin-top: 12px; padding: 7px 14px; font-size: .95rem; }
+
   /* About + contact */
   .about { display: grid; gap: 32px; }
   @media (min-width: 760px) { .about { grid-template-columns: 1fr 1fr; gap: 64px; } }
@@ -139,51 +150,92 @@
 
 <main>
   <section id="work" class="wrap">
-    <h2>Selected work</h2>
-    <p class="intro">Each project links to its GitHub repo, where you can spin the 3D models, download the CAD files and see the full process.</p>
+    <h2>Work</h2>
+    <p class="intro">Projects from first year to now, oldest first. Each one will link to its GitHub repo, where you can spin the 3D models and download the CAD files.</p>
 
-    <!-- PROJECT 1 — copy this whole <article> block for each new project -->
-    <article class="project">
-      <div class="shot">
-        <!-- Replace with: <img src="images/project-1.jpg" alt="Describe the render"> -->
-        Hero render of project 1
-      </div>
-      <div>
-        <h3>Project one title</h3>
-        <p class="meta">2026 · Capstone project</p>
-        <p>One or two sentences on the brief and what you designed. Say the problem, who it's for, and what makes your solution work.</p>
-        <ul class="tags">
-          <li>Fusion 360</li><li>Prototyping</li><li>User testing</li>
-        </ul>
-        <a class="btn" href="https://github.com/leangymfusion/project-one">View project on GitHub</a>
-      </div>
-    </article>
+    <h3 class="year">Year 1</h3>
+    <div class="grid">
+      <!-- Project 1: when ready, swap the placeholder for <img src="images/1.jpg" alt="..."> and the "soon" span for <a class="btn" href="https://github.com/leangymfusion/REPO">View on GitHub</a> -->
+      <article class="card">
+        <div class="shot">Render coming soon</div>
+        <div class="card-body">
+          <span class="num">1</span>
+          <h4>Glasses stand</h4>
+          <span class="soon">Coming soon</span>
+        </div>
+      </article>
+      <!-- Project 2: when ready, swap the placeholder for <img src="images/2.jpg" alt="..."> and the "soon" span for <a class="btn" href="https://github.com/leangymfusion/REPO">View on GitHub</a> -->
+      <article class="card">
+        <div class="shot">Render coming soon</div>
+        <div class="card-body">
+          <span class="num">2</span>
+          <h4>Sunglasses</h4>
+          <span class="soon">Coming soon</span>
+        </div>
+      </article>
+    </div>
 
-    <article class="project">
-      <div class="shot">Hero render of project 2</div>
-      <div>
-        <h3>Project two title</h3>
-        <p class="meta">2026 · Course or client</p>
-        <p>One or two sentences on the brief and what you designed.</p>
-        <ul class="tags">
-          <li>Fusion 360</li><li>3D printing</li>
-        </ul>
-        <a class="btn" href="https://github.com/leangymfusion/project-two">View project on GitHub</a>
-      </div>
-    </article>
-
-    <article class="project">
-      <div class="shot">Hero render of project 3</div>
-      <div>
-        <h3>Project three title</h3>
-        <p class="meta">2025 · Course or client</p>
-        <p>One or two sentences on the brief and what you designed.</p>
-        <ul class="tags">
-          <li>Fusion 360</li><li>Sketching</li>
-        </ul>
-        <a class="btn" href="https://github.com/leangymfusion/project-three">View project on GitHub</a>
-      </div>
-    </article>
+    <h3 class="year">Year 2</h3>
+    <div class="grid">
+      <!-- Project 3: when ready, swap the placeholder for <img src="images/3.jpg" alt="..."> and the "soon" span for <a class="btn" href="https://github.com/leangymfusion/REPO">View on GitHub</a> -->
+      <article class="card">
+        <div class="shot">Render coming soon</div>
+        <div class="card-body">
+          <span class="num">3</span>
+          <h4>Modular desk organiser</h4>
+          <span class="soon">Coming soon</span>
+        </div>
+      </article>
+      <!-- Project 4: when ready, swap the placeholder for <img src="images/4.jpg" alt="..."> and the "soon" span for <a class="btn" href="https://github.com/leangymfusion/REPO">View on GitHub</a> -->
+      <article class="card">
+        <div class="shot">Render coming soon</div>
+        <div class="card-body">
+          <span class="num">4</span>
+          <h4>Glasses case</h4>
+          <p class="note">Heat-bent</p>
+          <span class="soon">Coming soon</span>
+        </div>
+      </article>
+      <!-- Project 5: when ready, swap the placeholder for <img src="images/5.jpg" alt="..."> and the "soon" span for <a class="btn" href="https://github.com/leangymfusion/REPO">View on GitHub</a> -->
+      <article class="card">
+        <div class="shot">Render coming soon</div>
+        <div class="card-body">
+          <span class="num">5</span>
+          <h4>Extrusion clay moulds</h4>
+          <span class="soon">Coming soon</span>
+        </div>
+      </article>
+      <!-- Project 6: when ready, swap the placeholder for <img src="images/6.jpg" alt="..."> and the "soon" span for <a class="btn" href="https://github.com/leangymfusion/REPO">View on GitHub</a> -->
+      <article class="card">
+        <div class="shot">Render coming soon</div>
+        <div class="card-body">
+          <span class="num">6</span>
+          <h4>Playground</h4>
+          <p class="note">4 versions</p>
+          <span class="soon">Coming soon</span>
+        </div>
+      </article>
+      <!-- Project 7: when ready, swap the placeholder for <img src="images/7.jpg" alt="..."> and the "soon" span for <a class="btn" href="https://github.com/leangymfusion/REPO">View on GitHub</a> -->
+      <article class="card">
+        <div class="shot">Render coming soon</div>
+        <div class="card-body">
+          <span class="num">7</span>
+          <h4>Chair assignment</h4>
+          <p class="note">6 chairs</p>
+          <span class="soon">Coming soon</span>
+        </div>
+      </article>
+      <!-- Project 8: when ready, swap the placeholder for <img src="images/8.jpg" alt="..."> and the "soon" span for <a class="btn" href="https://github.com/leangymfusion/REPO">View on GitHub</a> -->
+      <article class="card">
+        <div class="shot">Render coming soon</div>
+        <div class="card-body">
+          <span class="num">8</span>
+          <h4>Shin pads &amp; bike lights</h4>
+          <p class="note">3 bike light versions</p>
+          <span class="soon">Coming soon</span>
+        </div>
+      </article>
+    </div>
   </section>
 
   <section id="about" class="wrap">
