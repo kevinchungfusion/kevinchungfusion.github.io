@@ -91,7 +91,10 @@
     color: var(--muted); font-size: .95rem; padding: 16px;
     background: repeating-linear-gradient(45deg, transparent 0 10px, color-mix(in srgb, var(--grid) 55%, transparent) 10px 11px);
   }
-  .shot img { width: 100%; height: 100%; object-fit: cover; }
+  .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .shot.has-img { padding: 0; border: 1px solid var(--grid); background: none; display: block; }
+  .card h4 a { text-decoration: none; }
+  .card h4 a:hover { text-decoration: underline; }
   .project h3 { font-size: 1.6rem; margin: 0 0 6px; letter-spacing: -0.01em; }
   .meta { color: var(--muted); margin: 0 0 14px; font-size: .95rem; }
   .project p { margin: 0 0 18px; max-width: 48ch; }
@@ -260,12 +263,12 @@
       </article>
       <!-- Project 11: when ready, swap the placeholder for <img src="images/11.jpg" alt="..."> and the "soon" span for <a class="btn" href="https://github.com/leangymfusion/REPO">View on GitHub</a> -->
       <article class="card">
-        <div class="shot">Render coming soon</div>
+        <a class="shot has-img" href="projects/flatmate/"><img src="projects/flatmate/images/card.jpg" alt="Flatmate chair 3D model" loading="lazy"></a>
         <div class="card-body">
           <span class="num">11</span>
-          <h4>Flatmate chair</h4>
-          <p class="note">Capstone · SaveBoard</p>
-          <span class="soon">Coming soon</span>
+          <h4><a href="projects/flatmate/">Flatmate chair</a></h4>
+          <p class="note">Capstone · SaveBoard flat-pack chair</p>
+          <a class="btn" href="projects/flatmate/">View project</a>
         </div>
       </article>
     </div>

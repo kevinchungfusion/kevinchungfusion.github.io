@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flatmate — Kevin Chung</title>
+<meta name="description" content="Flatmate: a recycled SaveBoard flat-pack chair for renters that sets up once and flattens for moving day. PROD314 capstone, 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<style>
+  :root {
+    --mat: #e9eee8; --grid: #cfd8ce; --ink: #18201b; --muted: #56625a;
+    --green: #2f5d50; --tape: #f2b33d; --surface: #f6f8f5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --mat: #141a16; --grid: #253029; --ink: #e8eee8; --muted: #9aa89f;
+      --green: #7fb8a5; --tape: #f2b33d; --surface: #1b231e;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--mat); color: var(--ink); font-family: "Bricolage Grotesque", system-ui, sans-serif; font-size: 1.0625rem; line-height: 1.55; }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--tape); outline-offset: 3px; border-radius: 2px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+  @media (min-width: 700px) { .wrap { padding: 0 32px; } }
+
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+  nav a { text-decoration: none; }
+  nav .back { color: var(--muted); }
+  nav .back:hover { color: var(--ink); }
+  nav .name { font-weight: 700; }
+
+  header.project { padding: 32px 0 24px; }
+  .project h1 { font-size: clamp(3rem, 12vw, 7rem); font-weight: 800; line-height: .9; letter-spacing: -0.035em; margin: 0; color: var(--green); }
+  .tagline { font-size: clamp(1.15rem, 2.6vw, 1.5rem); max-width: 32ch; margin: 18px 0 14px; }
+  .facts { display: flex; flex-wrap: wrap; gap: 6px 22px; color: var(--muted); font-size: .95rem; margin: 0; padding: 0; list-style: none; }
+
+  /* Viewer on the cutting mat */
+  .stage {
+    position: relative; border-block: 2px solid var(--green);
+    background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 24px 24px; background-position: -1px -1px;
+  }
+  model-viewer { width: 100%; height: min(72vh, 620px); background: transparent; --poster-color: transparent; }
+  .stage-bar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; padding: 14px 0; }
+  .toggle { display: inline-flex; border: 2px solid var(--green); border-radius: 6px; overflow: hidden; }
+  .toggle button { font: inherit; font-weight: 500; border: 0; background: transparent; color: var(--green); padding: 7px 16px; cursor: pointer; }
+  .toggle button[aria-pressed="true"] { background: var(--green); color: var(--surface); }
+  .hint { color: var(--muted); font-size: .9rem; margin: 0; }
+
+  main section { padding: 64px 0 0; }
+  h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); letter-spacing: -0.02em; margin: 0 0 16px; }
+  h3 { font-size: 1.2rem; margin: 0 0 6px; }
+  p { margin: 0 0 14px; max-width: 62ch; }
+  .lead { font-size: 1.2rem; }
+  .two { display: grid; gap: 28px; }
+  @media (min-width: 760px) { .two { grid-template-columns: 1fr 1fr; gap: 56px; } }
+
+  .stats { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin: 8px 0 0; padding: 0; list-style: none; }
+  .stats li { border-top: 2px solid var(--green); padding-top: 10px; }
+  .stats b { display: block; font-size: 2rem; line-height: 1.1; color: var(--green); letter-spacing: -0.02em; }
+  .stats span { color: var(--muted); font-size: .95rem; }
+
+  .spec { list-style: none; padding: 0; margin: 0; }
+  .spec li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--grid); }
+  .spec li span:last-child { color: var(--muted); text-align: right; }
+
+  .steps { counter-reset: s; display: grid; gap: 24px; padding: 0; margin: 0; list-style: none; }
+  @media (min-width: 760px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+  .steps li { counter-increment: s; position: relative; padding-left: 40px; }
+  .steps li::before { content: counter(s); position: absolute; left: 0; top: -4px; font-weight: 800; font-size: 1.8rem; color: var(--green); }
+
+  .versions { display: grid; gap: 28px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+  .version model-viewer { height: 260px; border: 1px solid var(--grid); background: var(--surface); border-radius: 4px; }
+  .version h3 { margin-top: 12px; }
+  .version p { color: var(--muted); font-size: .97rem; }
+  .tag { display: inline-block; font-size: .8rem; border: 1px solid var(--green); color: var(--green); border-radius: 999px; padding: 0 9px; margin-left: 6px; vertical-align: 2px; }
+  .tag.dropped { border-color: var(--muted); color: var(--muted); }
+
+  .pivot { background: var(--green); color: var(--surface); padding: 28px; border-radius: 4px; margin-top: 32px; }
+  .pivot h3 { color: var(--tape); }
+  .pivot ul { margin: 8px 0 0; padding-left: 20px; }
+
+  .files { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  .files a { display: flex; justify-content: space-between; gap: 16px; padding: 14px 16px; border: 1px solid var(--grid); border-radius: 4px; text-decoration: none; background: var(--surface); }
+  .files a:hover { border-color: var(--green); }
+  .files span:last-child { color: var(--muted); }
+
+  footer { margin-top: 80px; background: var(--green); color: var(--surface); padding: 40px 0; }
+  footer p { margin: 0 0 8px; }
+  footer small { opacity: .75; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="back" href="../../#work">← All projects</a>
+    <a class="name" href="../../">Kevin Chung</a>
+  </nav>
+
+  <header class="project">
+    <h1>Flatmate</h1>
+    <p class="tagline">A recycled-board chair for renters that sets up once and flattens for moving day.</p>
+    <ul class="facts">
+      <li>PROD314 Capstone, 2026</li>
+      <li>Fusion 360</li>
+      <li>SaveBoard + PETG</li>
+      <li>Supervisor: Barro de Gast</li>
+    </ul>
+  </header>
+</div>
+
+<div class="stage">
+  <div class="wrap">
+    <model-viewer id="hero" src="models/final.glb" alt="3D model of the Flatmate chair"
+      camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="0" rotation-per-second="18deg"
+      camera-orbit="-35deg 72deg auto" shadow-intensity="0.9" shadow-softness="0.8" exposure="0.75" tone-mapping="neutral" environment-image="neutral" interaction-prompt="none"></model-viewer>
+    <div class="stage-bar">
+      <div class="toggle" role="group" aria-label="Show mode">
+        <button type="button" aria-pressed="true" data-src="models/final.glb" data-alt="3D model of the Flatmate chair">Chair</button>
+        <button type="button" aria-pressed="false" data-src="models/stool.glb" data-alt="3D model of Flatmate in stool mode">Stool mode</button>
+      </div>
+      <p class="hint">Drag to rotate · scroll or pinch to zoom</p>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section>
+    <h2>The problem</h2>
+    <p class="lead">NZ homes are shrinking, and flat-pack furniture hasn't kept up.</p>
+    <ul class="stats">
+      <li><b>93 m²</b><span>average new apartment, vs 176 m² for a standalone home</span></li>
+      <li><b>−10%</b><span>drop in median floor area of new homes in one year</span></li>
+      <li><b>25%+</b><span>of people discard furniture when they move</span></li>
+    </ul>
+    <div class="two" style="margin-top:32px">
+      <p>Young renters in small urban apartments move often. But almost all flat-pack furniture from Kmart, Mocka, IKEA and Compac is MDF or particleboard, which weakens every time it's rebuilt and has no recycling route at end of life.</p>
+      <p><strong>The opportunity:</strong> SaveBoard is made in New Zealand from recycled soft plastics and beverage cartons, and no competitor uses it for furniture. The aim was a flat-pack chair made mostly from SaveBoard that sets up once, takes everyday seating loads and flattens for moving day.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>The design</h2>
+    <div class="two">
+      <div>
+        <p>Flatmate is three kerf-bent SaveBoard panels held together by 3D-printed PETG junction clamps and M6 bolts. The clamps protect the screw points, because screwing straight into SaveBoard again and again loosens it.</p>
+        <p>Take the clamps off and the panels flatten into one slim box. Rearrange them and the chair becomes a stool.</p>
+      </div>
+      <ul class="spec" aria-label="Specifications">
+        <li><span>Size</span><span>810 H × 660 W × 540 D mm</span></li>
+        <li><span>Seat height</span><span>400 mm front, 375 mm back</span></li>
+        <li><span>Materials</span><span>15 mm recycled SaveBoard, PETG clamps, zinc-plated M6 bolts</span></li>
+        <li><span>Flat-packed</span><span>540 × 1230 × 70 mm box, about 21 kg</span></li>
+        <li><span>Chair mass</span><span>about 18 kg (CAD estimate)</span></li>
+        <li><span>Strength</span><span>110 kg seating load, simulated factor of safety 4.05</span></li>
+        <li><span>Target price</span><span>$220–$250 NZD</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>How it's used</h2>
+    <ol class="steps">
+      <li><h3>Unbox</h3><p>Panels, clamps and bolts arrive in one 540 × 1230 × 70 mm box.</p></li>
+      <li><h3>Clamp and sit</h3><p>Fit the PETG clamps over the flanges and tighten the M6 bolts with one hex key.</p></li>
+      <li><h3>Moving day</h3><p>Unclamp, flatten the kerf bends and stack the panels. At end of life, the board and PETG separate for recycling.</p></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Development</h2>
+    <p>Flatmate went through several directions before the final clamped-panel design. Each model below can be rotated.</p>
+    <div class="versions">
+      <article class="version">
+        <model-viewer src="models/v1.glb" alt="3D model of version 1" camera-controls touch-action="pan-y" camera-orbit="-35deg 72deg auto" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>v1 <span class="tag">frame</span></h3>
+        <p>SaveBoard seat and back on a plywood frame. Its legs were too upright.</p>
+      </article>
+      <article class="version">
+        <model-viewer src="models/v1-bench.glb" alt="3D model of version 1 in bench mode" camera-controls touch-action="pan-y" camera-orbit="-35deg 72deg auto" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>v1 bench mode</h3>
+        <p>The same frame with the back folded flat to make a bench.</p>
+      </article>
+      <article class="version">
+        <model-viewer src="models/v2.glb" alt="3D model of version 2" camera-controls touch-action="pan-y" camera-orbit="-35deg 72deg auto" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>v2 <span class="tag">frame</span></h3>
+        <p>Legs angled outward for stability, and a reworked joint between the back rest and back legs.</p>
+      </article>
+      <article class="version">
+        <model-viewer src="models/v3.glb" alt="3D model of version 3" camera-controls touch-action="pan-y" camera-orbit="-35deg 72deg auto" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>v3 <span class="tag dropped">dropped</span></h3>
+        <p>An alternative concept: modular legs that stack like Lego to set the height, with a panel on top to make a chair or bench.</p>
+      </article>
+      <article class="version">
+        <model-viewer src="models/v3-bench.glb" alt="3D model of version 3 as a bench" camera-controls touch-action="pan-y" camera-orbit="-35deg 72deg auto" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>v3 bench</h3>
+        <p>The stacking legs as a bench. The idea was dropped because the stacked joints weren't structurally strong enough.</p>
+      </article>
+    </div>
+
+    <div class="pivot">
+      <h3>The pivot to Flatmate</h3>
+      <ul>
+        <li>The frame versions used more other material than SaveBoard.</li>
+        <li>So the SaveBoard panels themselves became the structure, stacked and kerf-bent.</li>
+        <li>Repeated screwing loosens SaveBoard, so PETG clamps now protect every screw point.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>CAD files</h2>
+    <p>Download the final model. Earlier versions and the full Fusion 360 archive are coming to GitHub soon.</p>
+    <ul class="files">
+      <li><a href="files/flatmate-final.step" download><span>Flatmate final, STEP (AP242)</span><span>1.1 MB</span></a></li>
+      <li><a href="files/flatmate-final.stl" download><span>Flatmate final, STL</span><span>490 KB</span></a></li>
+      <li><a href="files/flatmate-final-stool.stl" download><span>Flatmate stool mode, STL</span><span>430 KB</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Thanks to Barro de Gast (supervisor), Dr Bahareh Shahri (course coordinator), Randall Grenfell (workshop), Dr Hossein and SaveBoard (material samples).</p>
+    <p><a href="../../">← Back to all projects</a> · <a href="mailto:chungkevin104@gmail.com">chungkevin104@gmail.com</a></p>
+    <small>© 2026 Kevin Chung</small>
+  </div>
+</footer>
+
+<script>
+  const hero = document.getElementById('hero');
+  document.querySelectorAll('.toggle button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.toggle button').forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+      hero.src = btn.dataset.src;
+      hero.alt = btn.dataset.alt;
+    });
+  });
+</script>
+</body>
+</html>
