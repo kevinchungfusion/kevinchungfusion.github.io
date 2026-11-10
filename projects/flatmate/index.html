@@ -89,6 +89,15 @@
   .files a:hover { border-color: var(--green); }
   .files span:last-child { color: var(--muted); }
 
+  .hero-shot { margin: 8px auto 32px; }
+  .hero-shot img, .render img, .strip img { width: 100%; height: auto; display: block; border-radius: 4px; }
+  figcaption { color: var(--muted); font-size: .85rem; margin-top: 8px; }
+  .render { margin: 24px 0 0; }
+  .strip { margin: 40px 0 0; }
+  .folio { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  .folio a { display: block; border: 1px solid var(--grid); border-radius: 4px; overflow: hidden; }
+  .folio a:hover { border-color: var(--green); }
+  .folio img { width: 100%; height: auto; display: block; }
   footer { margin-top: 80px; background: var(--green); color: var(--surface); padding: 40px 0; }
   footer p { margin: 0 0 8px; }
   footer small { opacity: .75; }
@@ -114,7 +123,12 @@
   </header>
 </div>
 
-<div class="stage">
+<figure class="wrap hero-shot">
+  <img src="images/hero.jpg" alt="Flatmate chair in a living room, with its clamps and flat-packed panels beside it" width="780" height="397">
+  <figcaption>Canva AI-enhanced render from the Fusion 360 model.</figcaption>
+</figure>
+
+<div class="stage" aria-label="3D model">
   <div class="wrap">
     <model-viewer id="hero" src="models/final.glb" alt="3D model of the Flatmate chair"
       camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="0" rotation-per-second="18deg"
@@ -150,18 +164,21 @@
       <div>
         <p>Flatmate is three kerf-bent SaveBoard panels held together by 3D-printed PETG junction clamps and M6 bolts. The clamps protect the screw points, because screwing straight into SaveBoard again and again loosens it.</p>
         <p>Take the clamps off and the panels flatten into one slim box. Rearrange them and the chair becomes a stool.</p>
+        <figure class="render"><img src="images/render.jpg" alt="Flatmate in speckled recycled SaveBoard with blue PETG clamps" loading="lazy"><figcaption>15 mm SaveBoard with its natural fleck, 3D-printed PETG clamps.</figcaption></figure>
       </div>
       <ul class="spec" aria-label="Specifications">
         <li><span>Size</span><span>810 H × 660 W × 540 D mm</span></li>
         <li><span>Seat height</span><span>400 mm front, 375 mm back</span></li>
         <li><span>Materials</span><span>15 mm recycled SaveBoard, PETG clamps, zinc-plated M6 bolts</span></li>
-        <li><span>Flat-packed</span><span>540 × 1230 × 70 mm box, about 21 kg</span></li>
-        <li><span>Chair mass</span><span>about 18 kg (CAD estimate)</span></li>
+        <li><span>Flat-packed</span><span>540 × 1230 × 70 mm box (65 mm panel stack)</span></li>
+        <li><span>Chair mass</span><span>about 35 kg weighed (15 mm board)</span></li>
         <li><span>Strength</span><span>110 kg seating load, simulated factor of safety 4.05</span></li>
         <li><span>Target price</span><span>$220–$250 NZD</span></li>
       </ul>
     </div>
   </section>
+
+  <figure class="strip"><img src="images/steps.jpg" alt="Assembled, clamps off, flat-packed and stool mode" loading="lazy"><figcaption>Assembled → clamps off → flat-packed, plus stool mode.</figcaption></figure>
 
   <section>
     <h2>How it's used</h2>
@@ -210,6 +227,21 @@
         <li>So the SaveBoard panels themselves became the structure, stacked and kerf-bent.</li>
         <li>Repeated screwing loosens SaveBoard, so PETG clamps now protect every screw point.</li>
       </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Design folio</h2>
+    <p>The full A3 folio from the capstone. Click a page to open it.</p>
+    <div class="folio">
+      <a href="images/folio/page-1.jpg"><img src="images/folio/page-1.jpg" alt="Design folio page 1" loading="lazy"></a>
+      <a href="images/folio/page-2.jpg"><img src="images/folio/page-2.jpg" alt="Design folio page 2" loading="lazy"></a>
+      <a href="images/folio/page-3.jpg"><img src="images/folio/page-3.jpg" alt="Design folio page 3" loading="lazy"></a>
+      <a href="images/folio/page-4.jpg"><img src="images/folio/page-4.jpg" alt="Design folio page 4" loading="lazy"></a>
+      <a href="images/folio/page-5.jpg"><img src="images/folio/page-5.jpg" alt="Design folio page 5" loading="lazy"></a>
+      <a href="images/folio/page-6.jpg"><img src="images/folio/page-6.jpg" alt="Design folio page 6" loading="lazy"></a>
+      <a href="images/folio/page-7.jpg"><img src="images/folio/page-7.jpg" alt="Design folio page 7" loading="lazy"></a>
+      <a href="images/folio/page-8.jpg"><img src="images/folio/page-8.jpg" alt="Design folio page 8" loading="lazy"></a>
     </div>
   </section>
 
