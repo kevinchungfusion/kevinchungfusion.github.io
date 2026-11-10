@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MagSafe Charging Stand — Kevin Chung</title>
+<meta name="description" content="A Rimu and aluminium stand that charges an iPhone and AirPods at the same time. CNC-machined wood and an abrasive-waterjet-cut aluminium frame. PROD311 Coursework 1.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<link rel="stylesheet" href="../project.css">
+</head>
+<body>
+
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="back" href="../../#work">← All projects</a>
+    <a class="name" href="../../">Kevin Chung</a>
+  </nav>
+
+  <header class="project">
+    <h1>MagSafe Stand</h1>
+    <p class="tagline">A Rimu and aluminium stand that charges an iPhone and AirPods at the same time.</p>
+    <ul class="facts">
+      <li>PROD311 Coursework 1</li>
+      <li>Fusion 360</li>
+      <li>CNC + abrasive waterjet</li>
+      <li>Rimu + aluminium</li>
+    </ul>
+  </header>
+</div>
+
+<figure class="wrap hero-shot">
+  <img src="images/hero.jpg" alt="The finished stand: a round Rimu MagSafe pad on a bent aluminium arm above a square Rimu base" width="814" height="994" style="max-width:560px">
+  <figcaption>The finished stand, machined and assembled.</figcaption>
+</figure>
+
+<div class="stage" aria-label="3D model">
+  <div class="wrap">
+    <model-viewer id="hero" src="models/v4.glb" alt="3D model of the final MagSafe stand with a phone and AirPods"
+      camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="0" rotation-per-second="18deg"
+      camera-orbit="-40deg 75deg auto" shadow-intensity="0.9" shadow-softness="0.8" exposure="0.85" tone-mapping="neutral" environment-image="neutral" interaction-prompt="none"></model-viewer>
+    <div class="stage-bar">
+      <label class="toggle-line"><input type="checkbox" id="devices"> Show phone and AirPods</label>
+      <p class="hint">Drag to rotate · scroll or pinch to zoom</p>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section>
+    <h2>The brief</h2>
+    <div class="two">
+      <p class="lead">Take an existing bedside or desktop product and design and manufacture a high-value addition to it, using limited stock materials and tools.</p>
+      <p>We looked at bedside phone stands with MagSafe charging. Most only held a phone, and the ones that wrapped around the phone needed more material than our stock allowed. So we designed a smaller stand that uses less material but charges <strong>both</strong> a phone and AirPods, which set it apart from what's on the market.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>The design</h2>
+    <div class="two">
+      <div>
+        <p>An aluminium frame, cut on the waterjet, connects two Rimu pieces. The square base holds the AirPods and has a MagSafe charger hidden underneath it. The round pad holds the second MagSafe charger for the phone.</p>
+        <p>Because the phone pad is a circle rather than a cradle, the phone can sit in portrait or landscape, which works with iPhone StandBy mode as a bedside clock. Holes cut through the parts route the charger cables out of sight.</p>
+      </div>
+      <ul class="spec" aria-label="Specifications">
+        <li><span>Size</span><span>about 163 H × 73 W × 81 D mm</span></li>
+        <li><span>Materials</span><span>Rimu, aluminium sheet</span></li>
+        <li><span>Charging</span><span>2 MagSafe chargers: phone + AirPods</span></li>
+        <li><span>Processes</span><span>Abrasive waterjet, CNC router</span></li>
+        <li><span>Team</span><span>Kevin Chung, Hugh Thomas, Marcus Lum</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="photos">
+      <figure><img src="images/photo-side.jpg" alt="Phone attached to the stand from the side, AirPods charging on the base" loading="lazy"></figure>
+      <figure><img src="images/photo-standby.jpg" alt="Phone in landscape showing StandBy clock, AirPods on the base" loading="lazy"></figure>
+      <figure><img src="images/photo-portrait.jpg" alt="Phone in portrait on the stand" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Development</h2>
+    <p>Four CAD versions, then the waterjet flat pattern. Each model can be rotated.</p>
+    <div class="versions">
+      <article class="version">
+        <model-viewer src="models/v1.glb" alt="3D model of version 1" camera-controls touch-action="pan-y" camera-orbit="-40deg 70deg auto" exposure="0.85" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>v1 <span class="tag dropped">too simple</span></h3>
+        <p>A big, bulky holder that held the phone horizontally. It was easy to make and didn't feel like enough of a challenge.</p>
+      </article>
+      <article class="version">
+        <model-viewer src="models/v2-stand.glb" alt="3D model of version 2" camera-controls touch-action="pan-y" camera-orbit="-40deg 75deg auto" exposure="0.85" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>v2</h3>
+        <p>A quick model of the direction we chose. We spotted areas to improve: more parts to CNC, and a more refined look overall.</p>
+      </article>
+      <article class="version">
+        <model-viewer src="models/v3-stand.glb" alt="3D model of version 3" camera-controls touch-action="pan-y" camera-orbit="-40deg 75deg auto" exposure="0.85" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>v3 <span class="tag dropped">too complex</span></h3>
+        <p>Nearly final and looked great, but the parts would need flipping mid-job on the CNC, which meant a lot more planning, setup and machine time.</p>
+      </article>
+      <article class="version">
+        <model-viewer src="models/v4-stand.glb" alt="3D model of version 4, the final design" camera-controls touch-action="pan-y" camera-orbit="-40deg 75deg auto" exposure="0.85" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>v4 <span class="tag">final</span></h3>
+        <p>Simplified so everything machines from one side, while keeping the look. One MagSafe charger is hidden under the base, with cut-outs for the cables.</p>
+      </article>
+      <article class="version flat">
+        <model-viewer src="models/water-jet.glb" alt="3D model of the flat aluminium waterjet part" camera-controls touch-action="pan-y" camera-orbit="0deg 35deg auto" exposure="0.85" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>Waterjet flat pattern</h3>
+        <p>The aluminium frame as a flat 1.6 mm sheet part, about 223 × 76 mm, before bending.</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2>Manufacturing</h2>
+    <div class="mfg">
+      <div>
+        <h3>Abrasive waterjet: aluminium frame</h3>
+        <p>The frame was cut first. Small lead-ins were used because of the small holes, with two tabs at each end to hold the sheet.</p>
+        <img src="images/toolpaths-waterjet.jpg" alt="Waterjet toolpath for the flat aluminium frame" loading="lazy">
+      </div>
+      <div>
+        <h3>CNC router: Rimu parts</h3>
+        <p>Both wood parts were machined from one side only, using a flat end mill and a chamfer tool. They came from a single piece of 11.3 mm Rimu, with the top piece faced down to 8.5 mm, so no second stock was needed. Most toolpaths used a 3.5 mm step-down, with 4 tabs per part cut 0.5 mm deep to make sure they cut through.</p>
+        <img src="images/toolpaths-wood.jpg" alt="CNC toolpaths for the round phone pad and square base" loading="lazy" style="max-width:420px">
+      </div>
+    </div>
+    <div class="mfg" style="margin-top:32px">
+      <img src="images/cnc.jpg" alt="CNC router machining the Rimu stock" loading="lazy">
+      <div>
+        <h3>A problem on the CNC, and the fix</h3>
+        <p>Too few screws held the stock down, so it warped up slightly. The cutter then stopped a couple of millimetres short and didn't cut all the way through. Adding an extra screw to hold the board flat to the bed fixed it.</p>
+        <img src="images/screw-fix.jpg" alt="The extra hold-down screw circled in red on the CNC bed" loading="lazy">
+        <img src="images/cut-parts.jpg" alt="The two machined Rimu parts after cutting" loading="lazy" style="margin-top:14px;max-width:320px">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Design folio</h2>
+    <p>Pages from the coursework folio. Click a page to open it.</p>
+    <div class="folio">
+      <a href="images/folio/page-5.jpg"><img src="images/folio/page-5.jpg" alt="Folio: first concepts" loading="lazy"></a>
+      <a href="images/folio/page-7.jpg"><img src="images/folio/page-7.jpg" alt="Folio: second round of concepts" loading="lazy"></a>
+      <a href="images/folio/page-8.jpg"><img src="images/folio/page-8.jpg" alt="Folio: final concept" loading="lazy"></a>
+      <a href="images/folio/page-9.jpg"><img src="images/folio/page-9.jpg" alt="Folio: tool paths" loading="lazy"></a>
+      <a href="images/folio/page-10.jpg"><img src="images/folio/page-10.jpg" alt="Folio: manufacturing" loading="lazy"></a>
+      <a href="images/folio/page-11.jpg"><img src="images/folio/page-11.jpg" alt="Folio: final product" loading="lazy"></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>CAD files</h2>
+    <p>Download the final design and the waterjet part.</p>
+    <ul class="files">
+      <li><a href="files/magsafe-v4.step" download><span>Final stand (v4), STEP</span><span>210 KB</span></a></li>
+      <li><a href="files/magsafe-v4.stl" download><span>Final stand (v4), STL</span><span>380 KB</span></a></li>
+      <li><a href="files/magsafe-water-jet.step" download><span>Aluminium frame flat pattern, STEP</span><span>45 KB</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Team project with Hugh Thomas and Marcus Lum, PROD311, University of Canterbury.</p>
+    <p><a href="../../">← Back to all projects</a> · <a href="mailto:chungkevin104@gmail.com">chungkevin104@gmail.com</a></p>
+    <small>© 2026 Kevin Chung</small>
+  </div>
+</footer>
+
+<script>
+  const hero = document.getElementById('hero');
+  const box = document.getElementById('devices');
+  function setDevices(show) {
+    if (!hero.model) return;
+    for (const m of hero.model.materials) {
+      if (m.name === 'phone' || m.name === 'airpods') {
+        const c = m.pbrMetallicRoughness.baseColorFactor;
+        m.setAlphaMode(show ? 'OPAQUE' : 'BLEND');
+        m.pbrMetallicRoughness.setBaseColorFactor([c[0], c[1], c[2], show ? 1 : 0]);
+      }
+    }
+  }
+  box.addEventListener('change', () => setDevices(box.checked));
+  hero.addEventListener('load', () => setDevices(box.checked));
+</script>
+</body>
+</html>
