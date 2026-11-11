@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aerostream Bike Light — Kevin Chung</title>
+<meta name="description" content="Aerostream: a bike light redesigned with CFD and thermal simulation, cutting drag from 0.149 N to 0.022 N and peak temperature from 155 °C to 79 °C. Group project.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<link rel="stylesheet" href="../project.css">
+<style>
+  .two > * { min-width: 0; }
+  .wide-img { width: 100%; height: auto; display: block; border-radius: 4px; margin-top: 24px; }
+  .compare { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin: 24px 0 0; padding: 0; list-style: none; }
+  .compare li { background: var(--surface); border: 1px solid var(--grid); border-radius: 4px; padding: 18px; }
+  .compare dl { margin: 10px 0 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; }
+  .compare dt { color: var(--muted); }
+  .compare dd { margin: 0; text-align: right; font-weight: 500; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="back" href="../../#work">← All projects</a>
+    <a class="name" href="../../">Kevin Chung</a>
+  </nav>
+
+  <header class="project">
+    <h1>Aerostream</h1>
+    <p class="tagline">A bike light reshaped with airflow and heat simulation: 85% less drag, and cool enough not to melt its own shell.</p>
+    <ul class="facts">
+      <li>Group project, 2025</li>
+      <li>Fusion 360</li>
+      <li>CFD (SimScale)</li>
+      <li>Thermal simulation</li>
+    </ul>
+  </header>
+</div>
+
+<figure class="wrap hero-shot">
+  <img src="images/render.jpg" alt="Render of the teardrop-shaped Aerostream bike light" width="776" height="259" style="max-width:720px">
+</figure>
+
+<div class="stage" aria-label="3D model">
+  <div class="wrap">
+    <model-viewer id="hero" src="models/v3.glb" alt="3D model of the final bike light with a see-through shell showing the finned heat sink"
+      camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="0" rotation-per-second="18deg"
+      camera-orbit="30deg 70deg auto" shadow-intensity="0.9" shadow-softness="0.8" exposure="0.9" tone-mapping="neutral" environment-image="neutral" interaction-prompt="none"></model-viewer>
+    <div class="stage-bar">
+      <div class="toggle" role="group" aria-label="Show version">
+        <button type="button" aria-pressed="false" data-src="models/v1.glb">v1</button>
+        <button type="button" aria-pressed="false" data-src="models/v2.glb">v2</button>
+        <button type="button" aria-pressed="true" data-src="models/v3.glb">v3 final</button>
+      </div>
+      <p class="hint">Shell shown see-through so you can see the heat sink · drag to rotate</p>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section>
+    <h2>The problem</h2>
+    <div class="two">
+      <p class="lead">The original bike light was a cylinder with flat front and back faces. It trapped air, shed vortices, and ran its LED far too hot.</p>
+      <div>
+        <p>CFD in SimScale showed high pressure trapped on the flat front and turbulent wake off the flat back. Thermal simulation was worse: the LED area reached <strong>155 °C</strong>, far past the <strong>89 °C</strong> limit of the ABS housing.</p>
+        <p>We set out to fix both at once: a shape that cuts through the air, and a heat sink that keeps the LED inside the safe limit.</p>
+      </div>
+    </div>
+    <ul class="compare" aria-label="Results">
+      <li><h3>Original</h3><dl><dt>Drag at 10 m/s</dt><dd>0.149 N</dd><dt>Drag coefficient</dt><dd>1.15</dd><dt>Peak temperature</dt><dd>155 °C</dd></dl></li>
+      <li><h3>Final</h3><dl><dt>Drag at 10 m/s</dt><dd>0.022 N (−85%)</dd><dt>Drag coefficient</dt><dd>0.4</dd><dt>Peak temperature</dt><dd>79 °C, under the 89 °C limit</dd></dl></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Iterations</h2>
+    <div class="versions">
+      <article class="version">
+        <model-viewer src="models/v1.glb" alt="3D model of version 1" camera-controls touch-action="pan-y" camera-orbit="30deg 70deg auto" exposure="0.9" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>v1 <span class="tag">raindrop</span></h3>
+        <p>The base idea: a raindrop shape, with a tapered back to cut the wake behind the light.</p>
+      </article>
+      <article class="version">
+        <model-viewer src="models/v2.glb" alt="3D model of version 2" camera-controls touch-action="pan-y" camera-orbit="30deg 70deg auto" exposure="0.9" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>v2 <span class="tag">longer + heat sink</span></h3>
+        <p>The raindrop stretched narrower and longer, closer to an aerofoil, and a finned heat sink added inside.</p>
+      </article>
+      <article class="version">
+        <model-viewer src="models/v3.glb" alt="3D model of version 3" camera-controls touch-action="pan-y" camera-orbit="30deg 70deg auto" exposure="0.9" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>v3 <span class="tag">final</span></h3>
+        <p>A much bigger heat sink that fills more of the shell, with a thicker baseplate and more fins.</p>
+      </article>
+    </div>
+    <img class="wide-img" src="images/cfd-iterations.jpg" alt="CFD airflow and thermal results for the original light and the first two aero designs" loading="lazy">
+  </section>
+
+  <section>
+    <h2>The final design</h2>
+    <div class="two">
+      <div>
+        <h3>Airflow</h3>
+        <p>A blunted nose manages the stagnation pressure at the front, and the long, gradual tail keeps the airflow attached with no noticeable vortices. External pressure stays close to atmospheric, while the inside stays at low pressure, which helps cool the heat sink.</p>
+        <h3>Heat</h3>
+        <p>Rectangular fins run to the edge of the shell, 1.5 mm apart, 1.0 × 1.5 mm thick with a 1° taper for airflow and manufacturability, inspired by older CPU heat sinks. A thicker baseplate spreads heat into the fins. Peak temperature dropped to about 79 °C, keeping the LED cool enough not to deform the ABS housing.</p>
+      </div>
+      <img src="images/final-analysis.jpg" alt="Final heat sink, airflow and temperature simulation results" loading="lazy" style="width:100%;height:auto;border-radius:4px">
+    </div>
+  </section>
+
+  <section>
+    <h2>Poster</h2>
+    <div class="folio" style="grid-template-columns:minmax(0,420px)">
+      <a href="images/poster.jpg"><img src="images/poster.jpg" alt="Full Aerostream project poster" loading="lazy"></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>CAD files</h2>
+    <ul class="files">
+      <li><a href="files/bike-light-v3.step" download><span>Bike light v3, STEP</span><span>820 KB</span></a></li>
+      <li><a href="files/bike-light-v3.stl" download><span>Bike light v3, STL</span><span>1.5 MB</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Group project with Luke Busch, Tom Hegarty and Hugh Thomas, University of Canterbury.</p>
+    <p><a href="../../">← Back to all projects</a> · <a href="mailto:chungkevin104@gmail.com">chungkevin104@gmail.com</a></p>
+    <small>© 2026 Kevin Chung</small>
+  </div>
+</footer>
+
+<script>
+  const hero = document.getElementById('hero');
+  document.querySelectorAll('.toggle button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.toggle button').forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+      hero.src = btn.dataset.src;
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Re:Form Shin Guards — Kevin Chung</title>
+<meta name="description" content="Re:Form: shin guards made from recycled EVA footwear and recycled HDPE bottle caps, with a hand-developed recycling process. PROD211 group project.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<link rel="stylesheet" href="../project.css">
+<style>
+  .two > * { min-width: 0; }
+  .two img { width: 100%; height: auto; display: block; border-radius: 4px; }
+  .steps.eight { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .results { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  .results li { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--grid); }
+  .results b { min-width: 130px; }
+  .ok { color: var(--green); font-weight: 500; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="back" href="../../#work">← All projects</a>
+    <a class="name" href="../../">Kevin Chung</a>
+  </nav>
+
+  <header class="project">
+    <h1>Re:Form</h1>
+    <p class="tagline">Shin guards made from old EVA footwear and recycled bottle caps, using a recycling process we developed by hand.</p>
+    <ul class="facts">
+      <li>PROD211 group project, 2025</li>
+      <li>Recycled EVA + HDPE</li>
+      <li>Material testing</li>
+      <li>Fusion 360</li>
+    </ul>
+  </header>
+</div>
+
+<figure class="wrap hero-shot">
+  <img src="images/hero.jpg" alt="Finished shin guard with a speckled blue recycled HDPE shell" width="705" height="1077" style="max-width:420px">
+  <figcaption>The finished shin guard: recycled bottle-cap HDPE shell over fused EVA.</figcaption>
+</figure>
+
+<div class="stage" aria-label="3D model">
+  <div class="wrap">
+    <model-viewer id="hero" src="models/shin-guard.glb" alt="3D model of a pair of Re:Form shin guards"
+      camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="0" rotation-per-second="18deg"
+      camera-orbit="0deg 80deg auto" shadow-intensity="0.9" shadow-softness="0.8" exposure="0.9" tone-mapping="neutral" environment-image="neutral" interaction-prompt="none"></model-viewer>
+    <div class="stage-bar">
+      <p class="hint">A left and right pair, with ventilation holes · drag to rotate · scroll or pinch to zoom</p>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section>
+    <h2>The problem</h2>
+    <div class="two">
+      <p class="lead">Millions of EVA shoes go to landfill every year, and EVA and HDPE are rarely recycled in New Zealand. Meanwhile, shin guards are made from virgin plastic.</p>
+      <div>
+        <p>Our brief was to recycle a waste material into a new product. EVA foam stays recyclable even when worn, and it already has the impact absorption and long-term skin contact that shin guards need. For the rigid outer shell we turned to HDPE bottle caps: light, tough, impact-resistant, waterproof and easy to collect.</p>
+        <p>Two recycled materials that complement each other: <strong>soft EVA inside, strong HDPE outside.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Finding the material</h2>
+    <div class="two">
+      <div>
+        <p>We contacted Crocs and other EVA producers about scraps and additives, and later smaller local companies, but got little or no response. So we sourced our own from op shops, Facebook Marketplace, clothing bins, friends and family.</p>
+        <p>We heated Crocs, Birkenstocks, Red Band gumboots, jandals and cow collars to the same temperatures to see which fused best, then tested five ways of heating and three adhesives.</p>
+      </div>
+      <ul class="results" aria-label="Test results">
+        <li><b>Panini press</b><span class="ok">Best for fusing: direct heat without early pressure</span></li>
+        <li><b>Heat press</b><span>Failed: heat and pressure together stopped the EVA flowing</span></li>
+        <li><b>Mini oven</b><span>Failed: couldn't get heat into the inner pieces</span></li>
+        <li><b>Heat gun</b><span class="ok">Best for shaping: precise, local heat for bending</span></li>
+        <li><b>Hydraulic press</b><span class="ok">Essential: compressed the EVA into a 6 mm sheet</span></li>
+        <li><b>Adhesive</b><span>Super glue, epoxy and Gorilla Construction glue tested; Gorilla used</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Our process</h2>
+    <ol class="steps eight">
+      <li><h3>Prepare EVA</h3><p>Cut Birkenstocks into 3 × 3 cm pieces, filling gaps with shredded EVA to keep it spongy.</p></li>
+      <li><h3>Panini press</h3><p>Heat the pieces in an MDF mould between baking paper for 9 minutes until pliable.</p></li>
+      <li><h3>Hydraulic press</h3><p>Compress the hot EVA to the mould's 6 mm thickness so it fuses into one sheet.</p></li>
+      <li><h3>HDPE shell</h3><p>Melt recycled HDPE shreds into a flat sheet for the rigid outer shell.</p></li>
+      <li><h3>Laser cut</h3><p>Cut both the EVA and HDPE sheets to the shin guard shape.</p></li>
+      <li><h3>Glue layers</h3><p>Bond the EVA core to the HDPE shell with construction adhesive.</p></li>
+      <li><h3>Form the curve</h3><p>Soften with a heat gun and press between two curved wooden forms.</p></li>
+      <li><h3>Finish</h3><p>Let the glue set, then sand and trim the edges clean.</p></li>
+    </ol>
+    <div class="two" style="margin-top:32px">
+      <img src="images/process.jpg" alt="Folio page showing photos of each process step" loading="lazy">
+      <figure style="margin:0"><img src="images/formed.jpg" alt="Curved fused EVA piece after heat forming" loading="lazy"><figcaption>The fused EVA after heat-forming into a curve.</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Who it's for</h2>
+    <div class="two">
+      <p>Football and field hockey players aged 8–30, beginner to intermediate, who care about the environment. We surveyed 30 people aged 11–28: 26 had worn shin guards, field hockey and football were the main sports, and most liked the idea of a recycled option.</p>
+      <p>The colour isn't applied, it's inherited. The blue comes from the bottle caps and the dark texture from the fused EVA. NZ bottle caps come in blue, yellow, green and grey, so every batch looks a little different, and that variation is the identity.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Folio</h2>
+    <p>Pages from the group presentation. Click a page to open it.</p>
+    <div class="folio">
+      <a href="images/folio/ideation.jpg"><img src="images/folio/ideation.jpg" alt="Ideation" loading="lazy"></a>
+      <a href="images/folio/further-research.jpg"><img src="images/folio/further-research.jpg" alt="Further research" loading="lazy"></a>
+      <a href="images/folio/testing-1.jpg"><img src="images/folio/testing-1.jpg" alt="Testing heating methods" loading="lazy"></a>
+      <a href="images/folio/testing-2.jpg"><img src="images/folio/testing-2.jpg" alt="Testing heating methods continued" loading="lazy"></a>
+      <a href="images/folio/adhesive.jpg"><img src="images/folio/adhesive.jpg" alt="Adhesive testing" loading="lazy"></a>
+      <a href="images/folio/process.jpg"><img src="images/folio/process.jpg" alt="Our process" loading="lazy"></a>
+      <a href="images/folio/survey.jpg"><img src="images/folio/survey.jpg" alt="Survey data" loading="lazy"></a>
+      <a href="images/folio/unique.jpg"><img src="images/folio/unique.jpg" alt="What makes it unique" loading="lazy"></a>
+      <a href="images/folio/photos.jpg"><img src="images/folio/photos.jpg" alt="Process photos" loading="lazy"></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>CAD files</h2>
+    <ul class="files">
+      <li><a href="files/shin-guard.step" download><span>Shin guard, STEP</span><span>1.5 MB</span></a></li>
+      <li><a href="files/shin-guard.stl" download><span>Shin guard, STL</span><span>3.0 MB</span></a></li>
+      <li><a href="files/shin-guard-drawing.pdf" download><span>Technical drawing, PDF</span><span>320 KB</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Group project with Hugh Thomas, Cameron Fong and Edward Littlesmith, PROD211, University of Canterbury.</p>
+    <p><a href="../../">← Back to all projects</a> · <a href="mailto:chungkevin104@gmail.com">chungkevin104@gmail.com</a></p>
+    <small>© 2026 Kevin Chung</small>
+  </div>
+</footer>
+</body>
+</html>
