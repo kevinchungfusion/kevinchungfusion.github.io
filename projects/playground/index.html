@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twizel Tubes — Kevin Chung</title>
+<meta name="description" content="Twizel Tubes: a rotating sliding-pipe puzzle for a playground that teaches kids aged 7–10 how hydro power works, inspired by Twizel and the Upper Waitaki scheme. PROD213 group project.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<link rel="stylesheet" href="../project.css">
+<style>
+  .two > * { min-width: 0; }
+  .two img { width: 100%; height: auto; display: block; border-radius: 4px; }
+  .pair { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 20px; }
+  .pair img { width: 100%; height: 300px; object-fit: cover; display: block; border-radius: 4px; }
+  .steps.four { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="back" href="../../#work">← All projects</a>
+    <a class="name" href="../../">Kevin Chung</a>
+  </nav>
+
+  <header class="project">
+    <h1>Twizel Tubes</h1>
+    <p class="tagline">A playground puzzle where kids slide pipe blocks to route water to a turbine, learning how Twizel's hydro scheme makes power.</p>
+    <ul class="facts">
+      <li>PROD213 group project, 2025</li>
+      <li>Fusion 360</li>
+      <li>Ages 7–10</li>
+      <li>Cardboard prototyping</li>
+    </ul>
+  </header>
+</div>
+
+<figure class="wrap hero-shot">
+  <img src="images/hero.jpg" alt="Render of Twizel Tubes, a mountain-shaped structure with a pipe puzzle, placed in a playground" width="1600" height="810">
+  <figcaption>Twizel Tubes rendered into a playground.</figcaption>
+</figure>
+
+<div class="stage" aria-label="3D model">
+  <div class="wrap">
+    <model-viewer id="hero" src="models/final.glb" alt="3D model of the final Twizel Tubes structure"
+      camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="0" rotation-per-second="18deg"
+      camera-orbit="-25deg 78deg auto" shadow-intensity="0.9" shadow-softness="0.8" exposure="0.9" tone-mapping="neutral" environment-image="neutral" interaction-prompt="none"></model-viewer>
+    <div class="stage-bar">
+      <div class="toggle" role="group" aria-label="Show model">
+        <button type="button" aria-pressed="true" data-src="models/final.glb">Full structure</button>
+        <button type="button" aria-pressed="false" data-src="models/sliding.glb">Sliding mechanism</button>
+      </div>
+      <p class="hint">Drag to rotate · scroll or pinch to zoom</p>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section>
+    <h2>The brief</h2>
+    <div class="two">
+      <p class="lead">Design a new piece of play equipment that lets users engage with the history or meaning of a real place.</p>
+      <div>
+        <p>We chose <strong>Twizel</strong>, founded in 1968 to house the workers building the Upper Waitaki hydroelectric scheme: 50 km of canals, 2 dams and 4 powerhouses. It was only meant to be temporary.</p>
+        <p>Our north star: a high-end, sustainability-inspired piece of play equipment that teaches through challenge and collaboration, explaining hydro power to kids aged 7–10.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Research</h2>
+    <div class="two">
+      <p>We visited three Christchurch playgrounds (Hansons Reserve, Milnebank Reserve and Margaret Mahy) and rated each one for play flow, age range, safety and accessibility. We also used the equipment with our eyes covered to understand what it's like for visually impaired children. Margaret Mahy's water play scored highest, showing how complex ideas can be taught through simple, hands-on pieces.</p>
+      <p>The gaps we found: little inclusivity, few sustainable materials, and play kept separate from learning. That pointed us toward modular, interactive equipment that mixes physical play with science.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>From pipe wall to sliding puzzle</h2>
+    <div class="two">
+      <div>
+        <p>Our first concept was a wall with sockets. Kids would plug in loose pipe pieces and obstacles to guide water from a reservoir to a turbine. We prototyped part of it in cardboard to test pipe shapes, grip and socket fit.</p>
+        <p>User feedback changed everything: kids would try to <strong>climb</strong> the wall, the goal wasn't clear, and loose parts would go missing. We rewrote the brief around a clear goal, safe height, no removable parts and easy reset.</p>
+        <p>Next came a 6 × 6 grid of sliding pipe blocks, like a slide puzzle. It solved the loose parts problem, but 36 squares was too complex, and a solved board was hard to reset. So we cut it to <strong>4 × 4</strong> and made the whole grid rotate, so turning it scrambles the puzzle for the next player.</p>
+      </div>
+      <div class="pair" style="margin-top:0">
+        <img src="images/prototype-1.jpg" alt="Cardboard prototype of the first pipe wall concept" loading="lazy">
+        <img src="images/prototype-2.jpg" alt="Cardboard prototype of the sliding block grid" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Development</h2>
+    <p>Each model can be rotated.</p>
+    <div class="versions">
+      <article class="version">
+        <model-viewer src="models/v1.glb" alt="3D model of version 1, the pipe wall" camera-controls touch-action="pan-y" camera-orbit="155deg 75deg auto" exposure="0.9" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>v1 <span class="tag dropped">pipe wall</span></h3>
+        <p>The champion concept: a wall of sockets for loose pipes and obstacles. Dropped after feedback about climbing, confusion and lost parts.</p>
+      </article>
+      <article class="version">
+        <model-viewer src="models/v2.glb" alt="3D model of version 2, the sliding grid" camera-controls touch-action="pan-y" camera-orbit="-25deg 75deg auto" exposure="0.9" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>v2 <span class="tag">sliding grid</span></h3>
+        <p>Pipes built into sliding blocks, so no loose parts. Still too many squares, and hard to reset.</p>
+      </article>
+      <article class="version">
+        <model-viewer src="models/v3.glb" alt="3D model of version 3, the rotating grid" camera-controls touch-action="pan-y" camera-orbit="70deg 75deg auto" exposure="0.9" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>v3 <span class="tag">rotating</span></h3>
+        <p>A smaller grid set in a round frame that rotates to scramble the puzzle.</p>
+      </article>
+      <article class="version">
+        <model-viewer src="models/final.glb" alt="3D model of the final design" camera-controls touch-action="pan-y" camera-orbit="-25deg 75deg auto" exposure="0.9" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>Final <span class="tag">Twizel Tubes</span></h3>
+        <p>The 4 × 4 rotating puzzle set into a mountain range, with a crank, turbine and the puzzle repeated on the back.</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2>How to play</h2>
+    <ol class="steps four">
+      <li><h3>Slide</h3><p>Press a block in to release its pin, slide it to a new spot, and it clicks into place.</p></li>
+      <li><h3>Connect</h3><p>Twist the pipe pieces so their compression fittings join, building a path around the fish and mountain obstacles.</p></li>
+      <li><h3>Crank</h3><p>Turn the big wheel to release water through your pipeline into a clear turbine chamber.</p></li>
+      <li><h3>Reset</h3><p>Rotate the whole frame by its side handles to scramble the blocks for the next players.</p></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>The sliding mechanism</h2>
+    <div class="two">
+      <div>
+        <p>Every block runs on a rail and is held by a <strong>spring-loaded pin</strong>. Pushing the block in compresses the pin and frees it from its slot. Let go at the next position and it clicks back in. Each move is deliberate, nothing can be pulled out, and there are no pinch points.</p>
+        <p>Pipe ends seal with compression fittings, like real plumbing. The fish and mountain obstacles are weighted so they stay upright as the grid rotates.</p>
+      </div>
+      <img src="images/pin-mechanism.jpg" alt="Section view of the spring-loaded pin holding a block on its rail" loading="lazy" style="max-width:420px">
+    </div>
+  </section>
+
+  <section>
+    <h2>Materials, sustainability and safety</h2>
+    <div class="two">
+      <p>The body is rotationally moulded HDPE: UV-stable for Twizel's strong sun, frost-resistant and recyclable. The pipes are PVC, which is strong, light, non-toxic and easy to replace. The water runs in a closed loop and returns to the start through a hidden underground channel, so none is wasted.</p>
+      <p>The structure stands 150 cm tall, so everything is in reach for ages 7–10, with a low, stable base. Blocks slide without pinch points, the rotation runs on low-friction bushings, and the water is low pressure with no standing water. The pump is fully enclosed.</p>
+    </div>
+    <img src="images/closeup.jpg" alt="Close-up render of the pipe puzzle face" loading="lazy" style="width:100%;max-width:560px;height:auto;border-radius:4px;margin-top:24px;display:block">
+  </section>
+
+  <section>
+    <h2>Report</h2>
+    <p>Selected pages from the group report. Click a page to open it.</p>
+    <div class="folio">
+      <a href="images/folio/location.jpg"><img src="images/folio/location.jpg" alt="Location research: Twizel" loading="lazy"></a>
+      <a href="images/folio/research-margaret-mahy.jpg"><img src="images/folio/research-margaret-mahy.jpg" alt="Primary research at Margaret Mahy" loading="lazy"></a>
+      <a href="images/folio/ideation-nature.jpg"><img src="images/folio/ideation-nature.jpg" alt="Ideation from nature" loading="lazy"></a>
+      <a href="images/folio/ideation-education.jpg"><img src="images/folio/ideation-education.jpg" alt="Ideation for education" loading="lazy"></a>
+      <a href="images/folio/concept.jpg"><img src="images/folio/concept.jpg" alt="First concept" loading="lazy"></a>
+      <a href="images/folio/champion.jpg"><img src="images/folio/champion.jpg" alt="Champion design" loading="lazy"></a>
+      <a href="images/folio/user-feedback.jpg"><img src="images/folio/user-feedback.jpg" alt="User feedback" loading="lazy"></a>
+      <a href="images/folio/brief-revision.jpg"><img src="images/folio/brief-revision.jpg" alt="Brief revision" loading="lazy"></a>
+      <a href="images/folio/concept-development.jpg"><img src="images/folio/concept-development.jpg" alt="Concept development" loading="lazy"></a>
+      <a href="images/folio/final-design.jpg"><img src="images/folio/final-design.jpg" alt="Final design" loading="lazy"></a>
+      <a href="images/folio/how-to-play.jpg"><img src="images/folio/how-to-play.jpg" alt="How to play" loading="lazy"></a>
+      <a href="images/folio/mechanism-pin.jpg"><img src="images/folio/mechanism-pin.jpg" alt="Sliding pin mechanism" loading="lazy"></a>
+      <a href="images/folio/mechanism-pipes.jpg"><img src="images/folio/mechanism-pipes.jpg" alt="Pipe compression fittings" loading="lazy"></a>
+      <a href="images/folio/mechanism-rotation.jpg"><img src="images/folio/mechanism-rotation.jpg" alt="Rotation handles" loading="lazy"></a>
+      <a href="images/folio/safety.jpg"><img src="images/folio/safety.jpg" alt="Safety analysis" loading="lazy"></a>
+      <a href="images/folio/final-concept.jpg"><img src="images/folio/final-concept.jpg" alt="Final concept renders" loading="lazy"></a>
+      <a href="images/folio/drawings.jpg"><img src="images/folio/drawings.jpg" alt="Technical drawings" loading="lazy"></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>CAD files</h2>
+    <p>I made the technical drawing set with Luke Busch.</p>
+    <ul class="files">
+      <li><a href="files/twizel-tubes-final.stl" download><span>Twizel Tubes final, STL</span><span>9.4 MB</span></a></li>
+      <li><a href="files/sliding-mechanism.step" download><span>Sliding mechanism, STEP</span><span>1.5 MB</span></a></li>
+      <li><a href="files/twizel-tubes-drawings.pdf" download><span>Technical drawings, PDF</span><span>3.7 MB</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Group project with Luke Busch, Hugh Thomas, Tom Hegarty, Oliver May and Drew Waghorn, PROD213, University of Canterbury.</p>
+    <p><a href="../../">← Back to all projects</a> · <a href="mailto:chungkevin104@gmail.com">chungkevin104@gmail.com</a></p>
+    <small>© 2026 Kevin Chung</small>
+  </div>
+</footer>
+
+<script>
+  const hero = document.getElementById('hero');
+  document.querySelectorAll('.toggle button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.toggle button').forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+      hero.src = btn.dataset.src;
+    });
+  });
+</script>
+</body>
+</html>
