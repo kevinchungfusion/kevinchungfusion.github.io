@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modular Desk Organiser — Kevin Chung</title>
+<meta name="description" content="A rotating tower of injection-moulded cups on a steel rod, designed for injection moulding with draft angles and a metal insert. Group project, 2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<link rel="stylesheet" href="../project.css">
+<style>
+  .two > * { min-width: 0; }
+  .two img { width: 100%; height: auto; display: block; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="back" href="../../#work">← All projects</a>
+    <a class="name" href="../../">Kevin Chung</a>
+  </nav>
+
+  <header class="project">
+    <h1>Desk Organiser</h1>
+    <p class="tagline">A tower of cups that swing out around a steel rod, designed from the start for injection moulding.</p>
+    <ul class="facts">
+      <li>Group project, 2025</li>
+      <li>Injection moulding</li>
+      <li>Fusion 360</li>
+      <li>ABS + steel insert</li>
+    </ul>
+  </header>
+</div>
+
+<figure class="wrap hero-shot">
+  <img src="images/hero.jpg" alt="Render of five blue cups stacked around a steel rod on a grey base" width="650" height="855" style="max-width:440px">
+</figure>
+
+<div class="stage" aria-label="3D model">
+  <div class="wrap">
+    <model-viewer id="hero" src="models/organiser.glb" alt="3D model of the modular desk organiser"
+      camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="0" rotation-per-second="18deg"
+      camera-orbit="-30deg 72deg auto" shadow-intensity="0.9" shadow-softness="0.8" exposure="0.9" tone-mapping="neutral" environment-image="neutral" interaction-prompt="none"></model-viewer>
+    <div class="stage-bar"><p class="hint">Drag to rotate · scroll or pinch to zoom</p></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section>
+    <h2>The brief</h2>
+    <div class="two">
+      <p class="lead">Design a functional, good-looking desktop storage unit made by injection moulding, with at least two distinct parts suited to two-tone moulding without double injection.</p>
+      <div>
+        <p>It's for students and young professionals with small home offices or shared studio desks, who want tidy, modular storage with a clean, modern look.</p>
+        <p>Our goals: compact and stable, two parts in distinct colours, and easy to mould within standard constraints of <strong>walls ≥ 3 mm, 3° draft angles and no undercuts</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Concepts</h2>
+    <div class="two">
+      <div>
+        <p>Each of us sketched ideas, then we developed three concepts:</p>
+        <ul>
+          <li><strong>Compact storage:</strong> rings that rotate around a hinge pin, for nuts, bolts, staples and tacks.</li>
+          <li><strong>Stackable tower:</strong> modular containers that stack and pull apart. It taught us a lot about draft angles and parting lines, but its bevelled edge wasn't suited to moulding.</li>
+          <li><strong>Rotating tower:</strong> closest to the final. Cups swing around a central axis, so they can't come apart and get lost.</li>
+        </ul>
+        <p>After our review we added proper draft angles to the rod holes and a <strong>metal insert</strong> where the rod meets the base.</p>
+      </div>
+      <img src="images/render-detail.jpg" alt="Close-up render of a cup's hinge around the steel rod" loading="lazy">
+    </div>
+  </section>
+
+  <section>
+    <h2>Designing for the mould</h2>
+    <div class="two">
+      <div>
+        <p>The five identical ABS cups each have a hinge hole for the rod. We angled the draft so the hole is <strong>wider at the bottom</strong>, which makes it easier to drop a cup back onto the rod. The draft does a job for the user as well as for the mould.</p>
+        <p>The steel rod is <strong>insert-moulded</strong> into the base: it's placed in the mould and the plastic is injected around it, creating a strong bond and a durable rotation axis where plastic alone would wear. The wide, rounded base, inspired by Belkin's wireless charger stand, keeps the tower from tipping.</p>
+      </div>
+      <img src="images/mould-sketch.jpg" alt="Sketch of mould halves showing draft angles and the metal insert" loading="lazy">
+    </div>
+    <ul class="spec" style="margin-top:28px" aria-label="Specifications">
+      <li><span>Size</span><span>about 160 H × 111 W × 116 D mm</span></li>
+      <li><span>Parts</span><span>5 cups, 1 base (ABS), 1 steel rod</span></li>
+      <li><span>Base</span><span>Ø100 mm</span></li>
+      <li><span>Team</span><span>Luke Busch, Kevin Chung, Luke Schicker</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>In use</h2>
+    <div class="two">
+      <img src="images/in-use.jpg" alt="The organiser shown on a desk and a windowsill" loading="lazy" style="max-width:520px">
+      <div>
+        <h3>What we'd change next</h3>
+        <p>Pros: modular, small footprint, customisable and cheap to make. Cons: a bulky shipping size, and it needs the metal rod insert.</p>
+        <p>Next steps would be bigger cups for larger items, cup inserts such as a scissor slot, and a threaded rod so users can swap in different lengths.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Portfolio</h2>
+    <p>Pages from the group portfolio. Click a page to open it.</p>
+    <div class="folio">
+      <a href="images/folio/kevin-sketches.jpg"><img src="images/folio/kevin-sketches.jpg" alt="Kevin's sketch ideation" loading="lazy"></a>
+      <a href="images/folio/concept-1.jpg"><img src="images/folio/concept-1.jpg" alt="First concept" loading="lazy"></a>
+      <a href="images/folio/concept-2.jpg"><img src="images/folio/concept-2.jpg" alt="Second concept" loading="lazy"></a>
+      <a href="images/folio/concept-3.jpg"><img src="images/folio/concept-3.jpg" alt="Third concept" loading="lazy"></a>
+      <a href="images/folio/development-1.jpg"><img src="images/folio/development-1.jpg" alt="Concept development sketches" loading="lazy"></a>
+      <a href="images/folio/development-2.jpg"><img src="images/folio/development-2.jpg" alt="Concept development sketches" loading="lazy"></a>
+      <a href="images/folio/development-3.jpg"><img src="images/folio/development-3.jpg" alt="Concept development after review" loading="lazy"></a>
+      <a href="images/folio/metal-inserts.jpg"><img src="images/folio/metal-inserts.jpg" alt="Metal insert research" loading="lazy"></a>
+      <a href="images/folio/drawing-parts.jpg"><img src="images/folio/drawing-parts.jpg" alt="Parts list drawing" loading="lazy"></a>
+      <a href="images/folio/drawing-cup.jpg"><img src="images/folio/drawing-cup.jpg" alt="Cup drawing with draft angle section" loading="lazy"></a>
+      <a href="images/folio/drawing-base.jpg"><img src="images/folio/drawing-base.jpg" alt="Base plate drawing" loading="lazy"></a>
+      <a href="images/folio/mould-1.jpg"><img src="images/folio/mould-1.jpg" alt="Mould specifications" loading="lazy"></a>
+      <a href="images/folio/mould-2.jpg"><img src="images/folio/mould-2.jpg" alt="Cup cross-section with draft angles" loading="lazy"></a>
+      <a href="images/folio/mould-3.jpg"><img src="images/folio/mould-3.jpg" alt="Base plate and metal insert cross-section" loading="lazy"></a>
+      <a href="images/folio/reflection.jpg"><img src="images/folio/reflection.jpg" alt="Reflection and summary" loading="lazy"></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>CAD files</h2>
+    <p>I made the technical drawings with Luke Busch.</p>
+    <ul class="files">
+      <li><a href="files/desk-organiser.step" download><span>Desk organiser, STEP</span><span>125 KB</span></a></li>
+      <li><a href="files/desk-organiser.stl" download><span>Desk organiser, STL</span><span>810 KB</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Group project with Luke Busch and Luke Schicker, University of Canterbury.</p>
+    <p><a href="../../">← Back to all projects</a> · <a href="mailto:chungkevin104@gmail.com">chungkevin104@gmail.com</a></p>
+    <small>© 2026 Kevin Chung</small>
+  </div>
+</footer>
+</body>
+</html>
