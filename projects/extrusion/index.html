@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clay Extrusion Screen — Kevin Chung</title>
+<meta name="description" content="A 3D-printed extrusion die for a tessellating clay module that builds into a decorative screen wall. Group project, 2025.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<link rel="stylesheet" href="../project.css">
+<style>
+  .two > * { min-width: 0; }
+  .two img { width: 100%; height: auto; display: block; border-radius: 4px; }
+  .wide-img { width: 100%; height: auto; display: block; border-radius: 4px; margin-top: 24px; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="back" href="../../#work">← All projects</a>
+    <a class="name" href="../../">Kevin Chung</a>
+  </nav>
+
+  <header class="project">
+    <h1>Extrusion</h1>
+    <p class="tagline">A 3D-printed die that extrudes one interlocking clay shape, repeated into a patterned screen wall.</p>
+    <ul class="facts">
+      <li>Group project, March 2025</li>
+      <li>Clay extrusion</li>
+      <li>Die design</li>
+      <li>Fusion 360</li>
+    </ul>
+  </header>
+</div>
+
+<figure class="wrap hero-shot">
+  <img src="images/assembled.jpg" alt="Extruded clay modules assembled into a tessellating panel" width="1810" height="935">
+  <figcaption>The assembled scale model, made from extruded clay modules.</figcaption>
+</figure>
+
+<div class="stage" aria-label="3D model">
+  <div class="wrap">
+    <model-viewer id="hero" src="models/wall.glb" alt="3D model of the screen wall built from the extruded module"
+      camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="0" rotation-per-second="18deg"
+      camera-orbit="-30deg 78deg auto" shadow-intensity="0.9" shadow-softness="0.8" exposure="0.9" tone-mapping="neutral" environment-image="neutral" interaction-prompt="none"></model-viewer>
+    <div class="stage-bar">
+      <div class="toggle" role="group" aria-label="Show model">
+        <button type="button" aria-pressed="true" data-src="models/wall.glb">Screen wall</button>
+        <button type="button" aria-pressed="false" data-src="models/die.glb">Die + pusher</button>
+      </div>
+      <p class="hint">Drag to rotate · scroll or pinch to zoom</p>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section>
+    <h2>The idea</h2>
+    <div class="two">
+      <p class="lead">Design an extrusion die whose profile, repeated, builds something bigger. Ours was a decorative screen wall made of one interlocking shape.</p>
+      <div>
+        <p>We set three things to design around. <strong>The die:</strong> consistent wall thickness so the clay flows evenly without collapsing, and tapered edges for smooth extrusion. <strong>Efficiency:</strong> a shape that's easy to repeat and won't deform as it's handled, with the ribs placed so the die is easy to clean. <strong>Negative space:</strong> holes within and between modules, so the screen reads as a pattern.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>From sketch to die</h2>
+    <div class="two">
+      <div>
+        <p>We sketched tessellating hook and hexagon shapes, then refined the chosen three-armed form in Fusion 360 over three concept models:</p>
+        <ol>
+          <li>The single shape scaled up to fit better within the circular die, after feedback from our tutor.</li>
+          <li>Even gaps between the cut-outs.</li>
+          <li>Curves added throughout for more negative space, leaving a small gap between each extrusion.</li>
+        </ol>
+        <p>Inside the die, the ribs (supporting walls) follow the shape's strong curvature. Arranging them in a circle keeps the pressure even during extrusion and stops the profile deforming.</p>
+      </div>
+      <img src="images/die-render.jpg" alt="Render of the extrusion die and its pusher" loading="lazy" style="max-width:420px">
+    </div>
+  </section>
+
+  <section>
+    <h2>Making it</h2>
+    <div class="two">
+      <div>
+        <p>We extruded the shape several times to get a consistent piece. Extruding fast stopped the clay bending over. Once it cooled and hardened, we cut it into sections and arranged them into the pattern, then used a soldering iron to heat the sides of each section so they would stick together. That was tricky, since each piece could have up to 10 sides to heat.</p>
+        <p>The clay extruded best after <strong>15 seconds in the microwave</strong>: just soft enough to flow while holding its shape. Moving the warm clay into the tube and extruding straight away avoided early cooling and gave crisp, clean sections.</p>
+      </div>
+      <img src="images/scale-model.jpg" alt="A single extruded clay module with three curved arms" loading="lazy" style="max-width:420px">
+    </div>
+    <img class="wide-img" src="images/making.jpg" alt="Extruding the clay, the cut sections arranged, and the joined panel" loading="lazy">
+  </section>
+
+  <section>
+    <h2>Portfolio</h2>
+    <p>Pages from the group portfolio. Click a page to open it.</p>
+    <div class="folio">
+      <a href="images/folio/considerations.jpg"><img src="images/folio/considerations.jpg" alt="Things to consider" loading="lazy"></a>
+      <a href="images/folio/sketches-1.jpg"><img src="images/folio/sketches-1.jpg" alt="Sketch ideation" loading="lazy"></a>
+      <a href="images/folio/sketches-2.jpg"><img src="images/folio/sketches-2.jpg" alt="Sketch ideation" loading="lazy"></a>
+      <a href="images/folio/concept-models.jpg"><img src="images/folio/concept-models.jpg" alt="Concept models" loading="lazy"></a>
+      <a href="images/folio/dies.jpg"><img src="images/folio/dies.jpg" alt="Extrusion dies" loading="lazy"></a>
+      <a href="images/folio/making.jpg"><img src="images/folio/making.jpg" alt="Making process" loading="lazy"></a>
+      <a href="images/folio/scale-model.jpg"><img src="images/folio/scale-model.jpg" alt="Scale model" loading="lazy"></a>
+      <a href="images/folio/assembled.jpg"><img src="images/folio/assembled.jpg" alt="Assembled model" loading="lazy"></a>
+      <a href="images/folio/drawing-die.jpg"><img src="images/folio/drawing-die.jpg" alt="Die technical drawing" loading="lazy"></a>
+      <a href="images/folio/drawing-pusher.jpg"><img src="images/folio/drawing-pusher.jpg" alt="Pusher and cleaner technical drawing" loading="lazy"></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>CAD files</h2>
+    <p>I made the die and pusher drawings.</p>
+    <ul class="files">
+      <li><a href="files/extrusion-die.step" download><span>Extrusion die + pusher, STEP</span><span>420 KB</span></a></li>
+      <li><a href="files/die-drawing.pdf" download><span>Die drawing, PDF</span><span>390 KB</span></a></li>
+      <li><a href="files/pusher-cleaner-drawing.pdf" download><span>Pusher / cleaner drawing, PDF</span><span>345 KB</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Group project with Luke Busch and Luke Schicker, University of Canterbury.</p>
+    <p><a href="../../">← Back to all projects</a> · <a href="mailto:chungkevin104@gmail.com">chungkevin104@gmail.com</a></p>
+    <small>© 2026 Kevin Chung</small>
+  </div>
+</footer>
+
+<script>
+  const hero = document.getElementById('hero');
+  document.querySelectorAll('.toggle button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.toggle button').forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+      hero.src = btn.dataset.src;
+    });
+  });
+</script>
+</body>
+</html>
