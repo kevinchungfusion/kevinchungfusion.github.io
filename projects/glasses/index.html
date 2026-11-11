@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunglasses + Stand — Kevin Chung</title>
+<meta name="description" content="A slot-together flat-pack glasses stand and a fully parametric pair of sunglasses, modelled in Fusion 360. PROD112, 2024.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<link rel="stylesheet" href="../project.css">
+<style>
+  .two > * { min-width: 0; }
+  .drawings { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 24px; }
+  .drawings a { display: block; border: 1px solid var(--grid); border-radius: 4px; overflow: hidden; background: #fff; }
+  .drawings img { width: 100%; height: auto; display: block; }
+  .inline-viewer { height: 380px; background: var(--surface); border: 1px solid var(--grid); border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="back" href="../../#work">← All projects</a>
+    <a class="name" href="../../">Kevin Chung</a>
+  </nav>
+
+  <header class="project">
+    <h1>Sunglasses + Stand</h1>
+    <p class="tagline">My first-year digital prototyping work: a slot-together glasses stand, then a fully parametric pair of sunglasses to sit on it.</p>
+    <ul class="facts">
+      <li>PROD112, 2024</li>
+      <li>Fusion 360</li>
+      <li>Parametric modelling</li>
+      <li>Technical drawing</li>
+    </ul>
+  </header>
+</div>
+
+<div class="stage" aria-label="3D model">
+  <div class="wrap">
+    <model-viewer id="hero" src="models/glasses-on-stand.glb" alt="3D model of the sunglasses resting on the glasses stand"
+      camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="0" rotation-per-second="18deg"
+      camera-orbit="-35deg 75deg auto" shadow-intensity="0.9" shadow-softness="0.8" exposure="0.9" tone-mapping="neutral" environment-image="neutral" interaction-prompt="none"></model-viewer>
+    <div class="stage-bar">
+      <div class="toggle" role="group" aria-label="Show model">
+        <button type="button" aria-pressed="true" data-src="models/glasses-on-stand.glb">Together</button>
+        <button type="button" aria-pressed="false" data-src="models/glasses.glb">Sunglasses</button>
+        <button type="button" aria-pressed="false" data-src="models/stand.glb">Stand</button>
+      </div>
+      <p class="hint">Drag to rotate · scroll or pinch to zoom</p>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section id="stand">
+    <h2>The glasses stand</h2>
+    <div class="two">
+      <div>
+        <p class="lead">Coursework 1: a stand made from two flat profiles that slot together at right angles.</p>
+        <p>One piece is the "nose" profile and the other the "branching" profile, with arms stepping up so a pair of glasses can rest at each level. Both are flat parts with a slot cut halfway through, so the stand packs flat and assembles without fixings. The face of the nose piece carries customisable engraved text.</p>
+      </div>
+      <model-viewer class="inline-viewer" src="models/stand.glb" alt="3D model of the slot-together glasses stand" camera-controls touch-action="pan-y" camera-orbit="-35deg 75deg auto" exposure="0.9" tone-mapping="neutral" environment-image="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+    </div>
+  </section>
+
+  <section id="glasses">
+    <h2>The sunglasses</h2>
+    <div class="two">
+      <model-viewer class="inline-viewer" src="models/glasses.glb" alt="3D model of the parametric sunglasses" camera-controls touch-action="pan-y" camera-orbit="-35deg 75deg auto" exposure="0.9" tone-mapping="neutral" environment-image="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+      <div>
+        <p class="lead">Coursework 2: a pair of sunglasses, fully constrained and parametric in Fusion 360.</p>
+        <p>The model is built on parameters, so the frame width can be changed and the design updates around it. The frame is designed to be 3D printed upside down, with separate left and right temples featuring an engraved gold inlay, and a flat mirrored lens across the front.</p>
+        <ul class="spec" aria-label="Specifications">
+          <li><span>Parts</span><span>Frame, 2 temples, lens</span></li>
+          <li><span>Frame width</span><span>about 141 mm</span></li>
+          <li><span>Temple length</span><span>about 129 mm</span></li>
+          <li><span>Team</span><span>Hugh Thomas, Kevin Chung, Jack Dixon</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Technical drawings</h2>
+    <div class="drawings">
+      <a href="images/drawing-stand-nose.jpg"><img src="images/drawing-stand-nose.jpg" alt="Drawing of the stand's nose piece" loading="lazy"></a>
+      <a href="images/drawing-stand-branch.jpg"><img src="images/drawing-stand-branch.jpg" alt="Drawing of the stand's branching piece" loading="lazy"></a>
+      <a href="images/drawing-glasses-exploded.jpg"><img src="images/drawing-glasses-exploded.jpg" alt="Exploded parts drawing of the sunglasses" loading="lazy"></a>
+      <a href="images/drawing-glasses-views.jpg"><img src="images/drawing-glasses-views.jpg" alt="General views of the sunglasses" loading="lazy"></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>CAD files</h2>
+    <ul class="files">
+      <li><a href="files/glasses-stand.step" download><span>Glasses stand flat parts, STEP</span><span>1.1 MB</span></a></li>
+      <li><a href="files/stand-drawings.pdf" download><span>Stand drawings, PDF</span><span>700 KB</span></a></li>
+      <li><a href="files/glasses-drawings.pdf" download><span>Sunglasses drawings, PDF (7 sheets)</span><span>2.0 MB</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Sunglasses: group work with Hugh Thomas and Jack Dixon. PROD112, University of Canterbury.</p>
+    <p><a href="../../">← Back to all projects</a> · <a href="mailto:chungkevin104@gmail.com">chungkevin104@gmail.com</a></p>
+    <small>© 2026 Kevin Chung</small>
+  </div>
+</footer>
+
+<script>
+  const hero = document.getElementById('hero');
+  document.querySelectorAll('.toggle button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.toggle button').forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+      hero.src = btn.dataset.src;
+    });
+  });
+</script>
+</body>
+</html>
