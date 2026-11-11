@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MEDFOLD — Kevin Chung</title>
+<meta name="description" content="MEDFOLD: a compact folding chair for hospital patient rooms, built on the mechanism of a 1950s school chair. PROD214 group project.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<link rel="stylesheet" href="../project.css">
+<style>
+  .two > * { min-width: 0; }
+  .two img { width: 100%; height: auto; display: block; border-radius: 4px; }
+  .fold-btn { font: inherit; font-size: .85rem; font-weight: 500; border: 1px solid var(--green); color: var(--green); background: transparent; border-radius: 999px; padding: 2px 12px; cursor: pointer; margin-top: 6px; }
+  .fold-btn[aria-pressed="true"] { background: var(--green); color: var(--surface); }
+  .mine { display: inline-block; font-size: .8rem; background: var(--tape); color: #18201b; border-radius: 999px; padding: 0 9px; margin-left: 6px; vertical-align: 2px; }
+  .drawings { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .drawings a { display: block; border: 1px solid var(--grid); border-radius: 4px; overflow: hidden; background: #fff; }
+  .drawings img { width: 100%; height: auto; display: block; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="back" href="../../#work">← All projects</a>
+    <a class="name" href="../../">Kevin Chung</a>
+  </nav>
+
+  <header class="project">
+    <h1>MEDFOLD</h1>
+    <p class="tagline">A compact folding chair for hospital patient rooms, built on the mechanism of a 1950s school chair.</p>
+    <ul class="facts">
+      <li>PROD214 group project, 2025</li>
+      <li>Fusion 360</li>
+      <li>Aluminium + polypropylene</li>
+      <li>1:2 scale model</li>
+    </ul>
+  </header>
+</div>
+
+<figure class="wrap hero-shot">
+  <img src="images/hero.jpg" alt="Render of the MEDFOLD chair in pale blue polypropylene with an aluminium frame" width="695" height="1010" style="max-width:440px">
+  <figcaption>Final MEDFOLD design.</figcaption>
+</figure>
+
+<div class="stage" aria-label="3D model">
+  <div class="wrap">
+    <model-viewer id="hero" src="models/a10-final.glb" alt="3D model of the final MEDFOLD chair, open"
+      camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="0" rotation-per-second="18deg"
+      camera-orbit="-40deg 75deg auto" shadow-intensity="0.9" shadow-softness="0.8" exposure="0.9" tone-mapping="neutral" environment-image="neutral" interaction-prompt="none"></model-viewer>
+    <div class="stage-bar">
+      <div class="toggle" role="group" aria-label="Show state">
+        <button type="button" aria-pressed="true" data-src="models/a10-final.glb" data-alt="3D model of the final MEDFOLD chair, open">Open</button>
+        <button type="button" aria-pressed="false" data-src="models/a10-final-folded.glb" data-alt="3D model of the final MEDFOLD chair, folded">Folded</button>
+      </div>
+      <p class="hint">Drag to rotate · scroll or pinch to zoom</p>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section>
+    <h2>The brief</h2>
+    <div class="two">
+      <p class="lead">Design a stable, ergonomic folding chair for hospital patient rooms that's safe, comfortable, easy to clean, compact, light and cheap, using an existing chair's folding mechanism.</p>
+      <div>
+        <p>Most hospital chairs are big, heavy and expensive, built for comfort over portability. Visitors struggle to find seating near beds, and staff struggle to move and store chairs in tight rooms.</p>
+        <p>We set targets for a 150 kg load, folding in under 10 seconds, comfortable sitting for up to 2 hours, a 440–470 mm seat height, wipe-clean non-fabric surfaces, and a manufacturing cost under $100 NZD.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Choosing a mechanism</h2>
+    <div class="two">
+      <div>
+        <p>We analysed two existing folding chairs: <strong>Chair 12</strong>, an unknown 1950s school chair, and the <strong>Clarin MS100</strong>, a 1970s American event chair. For each one we modelled the mechanism, broke down the parts and manufacturing, and rated its ergonomics against anthropometric data.</p>
+        <p>Chair 12 was light, had a handle gap and folded flat, but its seat was too narrow (360 mm against a 422 mm average hip width), and the frame dug into your back. The Clarin was comfortable but very heavy, with no handle.</p>
+        <p>We chose <strong>Chair 12's simple 3-bar linkage</strong>. Its hinge sits behind the legs when folded, which keeps the folded profile small, and it's simple enough for anyone to use.</p>
+      </div>
+      <model-viewer src="models/chair12.glb" alt="3D model of Chair 12, the original school chair" camera-controls touch-action="pan-y" camera-orbit="-40deg 75deg auto" exposure="0.9" tone-mapping="neutral" environment-image="neutral" loading="lazy" interaction-prompt="none" style="height:380px;background:var(--surface);border:1px solid var(--grid);border-radius:4px"></model-viewer>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ideas to iterations</h2>
+    <div class="two">
+      <div>
+        <p>Each of the four of us sketched ideas and developed two concepts. Mine explored a simplified mechanism with a calmer look, then a version with armrests, hospital-green upholstery and a caster wheel for moving it when folded.</p>
+        <p>Concepts 6, 7 and 8 were combined into one updated design. We built a quick prototype to check the mechanism and proportions, and tested seat angles: 5–10° for the seat and 20–30° for the backrest worked best. Steeper angles lifted people's feet and made it harder to stand up, which is a safety issue for patients.</p>
+        <p>The prototype also showed that the back-leg connector was easy to fit upside down, so it was redesigned to only go one way.</p>
+      </div>
+      <img src="images/sketches.jpg" alt="Ideation sketches of folding chair concepts" loading="lazy">
+    </div>
+    <div class="pair" style="display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:20px">
+      <img src="images/prototype.jpg" alt="First full-size prototype of the chair" loading="lazy" style="width:100%;height:320px;object-fit:cover;border-radius:4px">
+      <img src="images/testing.jpg" alt="Testing seat and backrest angles with a user" loading="lazy" style="width:100%;height:320px;object-fit:cover;border-radius:4px">
+    </div>
+  </section>
+
+  <section>
+    <h2>Development</h2>
+    <p>We split into eight CAD iterations: an "optimised" row refining the updated design, and a "competitor" row aimed at the same market with a different approach. I modelled <strong>models 7 and 8</strong>. Click "Folded" under any chair to see it fold.</p>
+    <div class="versions">
+      <article class="version">
+        <model-viewer src="models/a6.glb" data-open="models/a6.glb" data-folded="models/a6-folded.glb" alt="3D model of the Assignment 6 chair" camera-controls touch-action="pan-y" camera-orbit="-40deg 75deg auto" exposure="0.9" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <button type="button" class="fold-btn" aria-pressed="false">Folded</button>
+        <h3>Assignment 6</h3>
+        <p>An early group version of the chair, before the CAD iterations.</p>
+      </article>
+      <article class="version">
+        <model-viewer src="models/dev-v1.glb" data-open="models/dev-v1.glb" data-folded="models/dev-v1-folded.glb" alt="3D model of developmental chair version 1" camera-controls touch-action="pan-y" camera-orbit="-40deg 75deg auto" exposure="0.9" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <button type="button" class="fold-btn" aria-pressed="false">Folded</button>
+        <h3>Developmental chair v1</h3>
+        <p>The updated design: a simplified mechanism, streamlined armrests, a backrest with an integrated handle, and crutch-style adjustable legs.</p>
+      </article>
+      <article class="version">
+        <model-viewer src="models/a8-optimise.glb" data-open="models/a8-optimise.glb" data-folded="models/a8-optimise-folded.glb" alt="3D model of model 7, optimised" camera-controls touch-action="pan-y" camera-orbit="-40deg 75deg auto" exposure="0.9" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <button type="button" class="fold-btn" aria-pressed="false">Folded</button>
+        <h3>Model 7, optimised <span class="mine">mine</span></h3>
+        <p>Armrests moved in line with the seat to cut overall width, after user feedback about the wide stance. A smaller back-leg connector that only fits one way, a reinforcing extrusion at the armrest hinge, more hinge-to-seat clearance to stop jamming, and sleeved rod joints for rigidity.</p>
+      </article>
+      <article class="version">
+        <model-viewer src="models/a8-redesign.glb" data-open="models/a8-redesign.glb" data-folded="models/a8-redesign-folded.glb" alt="3D model of model 8, competitor" camera-controls touch-action="pan-y" camera-orbit="-40deg 75deg auto" exposure="0.9" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <button type="button" class="fold-btn" aria-pressed="false">Folded</button>
+        <h3>Model 8, competitor <span class="mine">mine</span></h3>
+        <p>A cup holder and cushioned armrest, a backrest cushion joined to the back legs, a crutch slot with Velcro straps, a narrower and more curved seat, and flat feet using an off-the-shelf floor clip.</p>
+      </article>
+      <article class="version">
+        <model-viewer src="models/a10-final.glb" data-open="models/a10-final.glb" data-folded="models/a10-final-folded.glb" alt="3D model of the final MEDFOLD chair" camera-controls touch-action="pan-y" camera-orbit="-40deg 75deg auto" exposure="0.9" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <button type="button" class="fold-btn" aria-pressed="false">Folded</button>
+        <h3>Final <span class="tag">MEDFOLD</span></h3>
+        <p>Takes the rounded handle from model 1, the armrest position from <strong>my model 7</strong>, and the combined backrest and leg connector from <strong>my model 8</strong>, which cut the part count.</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2>The final chair</h2>
+    <div class="two">
+      <div>
+        <p>A hollow aluminium 6061 frame carries injection-moulded polypropylene seat, backrest and armrests. PP was chosen over ABS for being lighter, cheaper, durable and chemically resistant, which is why hospitals tend to use it. The seat cushion is Crypton fabric: liquid-proof, antimicrobial and rated for 10+ years of heavy use.</p>
+        <p>PP safety hooks lock onto the back legs to stop it tipping forward. The legs adjust in height with a spring-button clip, like crutches, so no tools are needed.</p>
+      </div>
+      <ul class="spec" aria-label="Specifications">
+        <li><span>Size</span><span>about 866 H × 495 W mm</span></li>
+        <li><span>Frame</span><span>Aluminium 6061, extruded tube, welded</span></li>
+        <li><span>Seat, back, arms</span><span>Polypropylene, injection moulded</span></li>
+        <li><span>Cushion</span><span>Crypton fabric, RF-welded seams</span></li>
+        <li><span>Mechanism</span><span>3-bar linkage from Chair 12</span></li>
+        <li><span>Legs</span><span>Tool-free spring-button height adjustment</span></li>
+        <li><span>Analysis</span><span>Bending and compression checks for a 97.7 kg (95th percentile) user</span></li>
+        <li><span>Team</span><span>Marcus Lum, Cameron Fong, Kevin Chung, Luseane Uia</span></li>
+      </ul>
+    </div>
+    <div class="two" style="margin-top:32px">
+      <figure style="margin:0"><img src="images/scale-model.jpg" alt="Photos of the 1:2 scale model, open and folded" loading="lazy"><figcaption>The 1:2 scale model, with a working fold and armrests.</figcaption></figure>
+      <figure style="margin:0"><img src="images/adjustable-legs.jpg" alt="Cutaway of the spring-button leg adjustment" loading="lazy"><figcaption>Spring-button leg adjustment, borrowed from crutches.</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Technical drawings</h2>
+    <div class="drawings">
+      <a href="images/drawing-parts.jpg"><img src="images/drawing-parts.jpg" alt="Exploded parts list drawing" loading="lazy"></a>
+      <a href="images/drawing-views.jpg"><img src="images/drawing-views.jpg" alt="General chair dimension drawing" loading="lazy"></a>
+      <a href="images/drawing-folded.jpg"><img src="images/drawing-folded.jpg" alt="Folded versus in-use dimension drawing" loading="lazy"></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Project book</h2>
+    <p>Selected pages from the group project book. Click a page to open it.</p>
+    <div class="folio">
+      <a href="images/folio/chair12-ergonomics.jpg"><img src="images/folio/chair12-ergonomics.jpg" alt="Chair 12 ergonomic analysis" loading="lazy"></a>
+      <a href="images/folio/mechanism.jpg"><img src="images/folio/mechanism.jpg" alt="Chosen chair mechanism" loading="lazy"></a>
+      <a href="images/folio/ideation.jpg"><img src="images/folio/ideation.jpg" alt="Chair ideation sketches" loading="lazy"></a>
+      <a href="images/folio/kevin-proposal-1.jpg"><img src="images/folio/kevin-proposal-1.jpg" alt="Kevin's first concept" loading="lazy"></a>
+      <a href="images/folio/kevin-proposal-2.jpg"><img src="images/folio/kevin-proposal-2.jpg" alt="Kevin's second concept" loading="lazy"></a>
+      <a href="images/folio/proposals.jpg"><img src="images/folio/proposals.jpg" alt="Design proposals overview" loading="lazy"></a>
+      <a href="images/folio/updated-design.jpg"><img src="images/folio/updated-design.jpg" alt="Updated design" loading="lazy"></a>
+      <a href="images/folio/testing.jpg"><img src="images/folio/testing.jpg" alt="Prototypes and testing" loading="lazy"></a>
+      <a href="images/folio/model-7.jpg"><img src="images/folio/model-7.jpg" alt="Model 7 changes" loading="lazy"></a>
+      <a href="images/folio/model-8.jpg"><img src="images/folio/model-8.jpg" alt="Model 8 changes" loading="lazy"></a>
+      <a href="images/folio/chosen-iterations.jpg"><img src="images/folio/chosen-iterations.jpg" alt="Chosen iterations" loading="lazy"></a>
+      <a href="images/folio/details.jpg"><img src="images/folio/details.jpg" alt="Chair details" loading="lazy"></a>
+      <a href="images/folio/final-design.jpg"><img src="images/folio/final-design.jpg" alt="Final design" loading="lazy"></a>
+      <a href="images/folio/scale-model.jpg"><img src="images/folio/scale-model.jpg" alt="Final 1:2 scale model" loading="lazy"></a>
+      <a href="images/folio/structural.jpg"><img src="images/folio/structural.jpg" alt="Structural analysis" loading="lazy"></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>CAD files</h2>
+    <ul class="files">
+      <li><a href="files/medfold-final.step" download><span>MEDFOLD final, STEP</span><span>2.2 MB</span></a></li>
+      <li><a href="files/medfold-final.stl" download><span>MEDFOLD final, STL</span><span>2.7 MB</span></a></li>
+      <li><a href="files/medfold-final-folded.stl" download><span>MEDFOLD final folded, STL</span><span>2.7 MB</span></a></li>
+      <li><a href="files/medfold-technical-drawings.pdf" download><span>Technical drawing pack, PDF (16 sheets)</span><span>4.2 MB</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Group project with Marcus Lum, Cameron Fong and Luseane Uia, PROD214, University of Canterbury.</p>
+    <p><a href="../../">← Back to all projects</a> · <a href="mailto:chungkevin104@gmail.com">chungkevin104@gmail.com</a></p>
+    <small>© 2026 Kevin Chung</small>
+  </div>
+</footer>
+
+<script>
+  const hero = document.getElementById('hero');
+  document.querySelectorAll('.toggle button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.toggle button').forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+      hero.src = btn.dataset.src; hero.alt = btn.dataset.alt;
+    });
+  });
+  document.querySelectorAll('.fold-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mv = btn.previousElementSibling;
+      const folded = btn.getAttribute('aria-pressed') !== 'true';
+      btn.setAttribute('aria-pressed', folded ? 'true' : 'false');
+      mv.src = folded ? mv.dataset.folded : mv.dataset.open;
+    });
+  });
+</script>
+</body>
+</html>
