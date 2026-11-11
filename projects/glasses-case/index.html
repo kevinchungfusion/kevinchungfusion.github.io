@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Telescopic Glasses Case — Kevin Chung</title>
+<meta name="description" content="A telescopic glasses case laser-cut and line-bent from flat acrylic, with a sliding tab-and-slot closure instead of a hinge. PROD210 group project.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<link rel="stylesheet" href="../project.css">
+<style>
+  .two > * { min-width: 0; }
+  .two img { width: 100%; height: auto; display: block; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="back" href="../../#work">← All projects</a>
+    <a class="name" href="../../">Kevin Chung</a>
+  </nav>
+
+  <header class="project">
+    <h1>Glasses Case</h1>
+    <p class="tagline">A telescopic glasses case cut and bent from flat acrylic sheet, with a sliding closure instead of a hinge.</p>
+    <ul class="facts">
+      <li>PROD210 group project, 2025</li>
+      <li>Laser cutting</li>
+      <li>Line bending</li>
+      <li>Fusion 360</li>
+    </ul>
+  </header>
+</div>
+
+<figure class="wrap hero-shot">
+  <img src="images/hero.jpg" alt="Render of the clear acrylic glasses case on a wooden table, partly extended" width="1473" height="821">
+</figure>
+
+<div class="stage" aria-label="3D model">
+  <div class="wrap">
+    <model-viewer id="hero" src="models/v2.glb" alt="3D model of the two acrylic parts of the glasses case"
+      camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="0" rotation-per-second="18deg"
+      camera-orbit="-30deg 65deg auto" shadow-intensity="0.7" shadow-softness="0.8" exposure="0.95" tone-mapping="neutral" environment-image="neutral" interaction-prompt="none"></model-viewer>
+    <div class="stage-bar">
+      <div class="toggle" role="group" aria-label="Show model">
+        <button type="button" aria-pressed="true" data-src="models/v2.glb">Bent parts</button>
+        <button type="button" aria-pressed="false" data-src="models/flat.glb">Flat laser-cut pattern</button>
+      </div>
+      <p class="hint">Drag to rotate · scroll or pinch to zoom</p>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section>
+    <h2>The brief</h2>
+    <div class="two">
+      <p class="lead">Design a two-part container using only laser cutting and line bending of 3 mm acrylic, getting creative with bends rather than tabs and slots.</p>
+      <div>
+        <p>We chose a glasses case. Very few are made from acrylic, and glasses accessories are a big market. The challenge: once acrylic is heated and bent it's rigid, so the usual hinges and folding closures were impossible.</p>
+        <p>Our answer was a <strong>telescopic case</strong>: an inner sleeve that slides out of an outer one, with a tab running in a slot to guide it and stop it at each end.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Prototyping</h2>
+    <div class="two">
+      <div>
+        <p>Cardboard prototypes proved the telescopic idea and sized it around an average pair of glasses within our limited acrylic. They showed the inner piece needs at least <strong>2 mm clearance</strong> to slide.</p>
+        <p>Covering the whole case used too much material, so we opened up the side, which also lets you see the glasses. Our first slide design used bent tabs, but our tutor pointed out that such a tight bend would be very hard to make and could catch the inner piece during bending. We reworked it into a <strong>flat tab that runs in a slot</strong>, which fixed both the sliding and the material problem.</p>
+        <p>Testing in 2 mm acrylic led to two final tweaks: a longer slot so the inner piece doesn't wobble at full extension, and tighter outer bends for a slight friction fit.</p>
+      </div>
+      <img src="images/final-photos.jpg" alt="Photos of the finished acrylic glasses case from several angles" loading="lazy">
+    </div>
+  </section>
+
+  <section>
+    <h2>Development</h2>
+    <div class="versions">
+      <article class="version">
+        <model-viewer src="models/v1.glb" alt="3D model of version 1" camera-controls touch-action="pan-y" camera-orbit="-30deg 65deg auto" exposure="0.95" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>v1</h3>
+        <p>An early Fusion model of the telescopic sleeves.</p>
+      </article>
+      <article class="version">
+        <model-viewer src="models/v2.glb" alt="3D model of version 2, final" camera-controls touch-action="pan-y" camera-orbit="-30deg 65deg auto" exposure="0.95" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>v2 <span class="tag">final</span></h3>
+        <p>The final inside and outside pieces, with the lengthened slot and engraving.</p>
+      </article>
+      <article class="version">
+        <model-viewer src="models/flat.glb" alt="3D model of the flat laser-cut parts" camera-controls touch-action="pan-y" camera-orbit="0deg 25deg auto" exposure="0.95" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>Laser-cut pattern</h3>
+        <p>The two flat 3 mm parts as cut, before line bending to 90° and 120°.</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2>Outcome</h2>
+    <div class="two">
+      <p>The finished case closes simply without jamming, fits most glasses snugly, and can be re-bent to adjust the size. It's engraved with the UC School of Product Design logo and our names.</p>
+      <p>Next time we'd add a soft lining to protect the lenses and give it a more premium feel, and move the slide point further down so the logo sits front and centre.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Portfolio</h2>
+    <p>Pages from the group portfolio. Click a page to open it.</p>
+    <div class="folio">
+      <a href="images/folio/ideation-1.jpg"><img src="images/folio/ideation-1.jpg" alt="Ideation" loading="lazy"></a>
+      <a href="images/folio/ideation-2.jpg"><img src="images/folio/ideation-2.jpg" alt="Ideation sketches" loading="lazy"></a>
+      <a href="images/folio/ideation-3.jpg"><img src="images/folio/ideation-3.jpg" alt="Ideation sketches" loading="lazy"></a>
+      <a href="images/folio/prototype-cardboard.jpg"><img src="images/folio/prototype-cardboard.jpg" alt="Cardboard prototypes" loading="lazy"></a>
+      <a href="images/folio/prototype-fusion-1.jpg"><img src="images/folio/prototype-fusion-1.jpg" alt="Fusion prototypes" loading="lazy"></a>
+      <a href="images/folio/prototype-fusion-2.jpg"><img src="images/folio/prototype-fusion-2.jpg" alt="Reworked sliding mechanism" loading="lazy"></a>
+      <a href="images/folio/prototype-acrylic.jpg"><img src="images/folio/prototype-acrylic.jpg" alt="Acrylic prototype testing" loading="lazy"></a>
+      <a href="images/folio/final-design.jpg"><img src="images/folio/final-design.jpg" alt="Final design" loading="lazy"></a>
+      <a href="images/folio/final-photos.jpg"><img src="images/folio/final-photos.jpg" alt="Final product photos" loading="lazy"></a>
+      <a href="images/folio/drawing-inside.jpg"><img src="images/folio/drawing-inside.jpg" alt="Inside piece drawing" loading="lazy"></a>
+      <a href="images/folio/drawing-outside.jpg"><img src="images/folio/drawing-outside.jpg" alt="Outside piece drawing" loading="lazy"></a>
+      <a href="images/folio/conclusion.jpg"><img src="images/folio/conclusion.jpg" alt="Conclusion" loading="lazy"></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>CAD files</h2>
+    <p>I made the inside and outside part drawings.</p>
+    <ul class="files">
+      <li><a href="files/glasses-case.step" download><span>Glasses case (bent), STEP</span><span>5.8 MB</span></a></li>
+      <li><a href="files/glasses-case-laser-cut-flat.step" download><span>Flat laser-cut pattern, STEP</span><span>5.0 MB</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Group project with Luke Schicker and Luke Busch, PROD210, University of Canterbury.</p>
+    <p><a href="../../">← Back to all projects</a> · <a href="mailto:chungkevin104@gmail.com">chungkevin104@gmail.com</a></p>
+    <small>© 2026 Kevin Chung</small>
+  </div>
+</footer>
+
+<script>
+  const hero = document.getElementById('hero');
+  document.querySelectorAll('.toggle button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.toggle button').forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+      hero.src = btn.dataset.src;
+    });
+  });
+</script>
+</body>
+</html>
