@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bike Hanger — Kevin Chung</title>
+<meta name="description" content="A single-part 3D-printed bike hanger, simulated and load-tested in Fusion 360, then digitally optimised to cut its mass by 67%. PROD311 Coursework 2 and 3.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<link rel="stylesheet" href="../project.css">
+<style>
+  .compare { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin: 24px 0 0; padding: 0; list-style: none; }
+  .compare li { background: var(--surface); border: 1px solid var(--grid); border-radius: 4px; padding: 18px; }
+  .compare h3 { margin-bottom: 10px; }
+  .compare dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; }
+  .compare dt { color: var(--muted); }
+  .compare dd { margin: 0; text-align: right; font-weight: 500; }
+  .pair { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 18px; }
+  .two > * { min-width: 0; }
+  .two img { width: 100%; height: auto; display: block; border-radius: 4px; }
+  .pair.single { max-width: 720px; }
+  .pair img { width: 100%; height: auto; display: block; border-radius: 4px; border: 1px solid var(--grid); background: #fff; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="back" href="../../#work">← All projects</a>
+    <a class="name" href="../../">Kevin Chung</a>
+  </nav>
+
+  <header class="project">
+    <h1>Bike Hanger</h1>
+    <p class="tagline">A single-part 3D-printed bike hanger, simulated, load-tested, then digitally optimised to cut 67% of its mass.</p>
+    <ul class="facts">
+      <li>PROD311 Coursework 2 + 3</li>
+      <li>Fusion 360 simulation</li>
+      <li>Shape optimisation + generative design</li>
+      <li>FDM 3D printing</li>
+    </ul>
+  </header>
+</div>
+
+<figure class="wrap hero-shot">
+  <img src="images/hero.jpg" alt="Mountain bike front wheel hanging from the dark blue optimised hanger on a wooden post" width="845" height="1080" style="max-width:520px">
+  <figcaption>The optimised hanger (Coursework 3) holding a mountain bike.</figcaption>
+</figure>
+
+<div class="stage" aria-label="3D model">
+  <div class="wrap">
+    <model-viewer id="hero" src="models/cw3-v2.glb" alt="3D model of the optimised bike hanger"
+      camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="0" rotation-per-second="18deg"
+      camera-orbit="-40deg 75deg auto" shadow-intensity="0.9" shadow-softness="0.8" exposure="0.9" tone-mapping="neutral" environment-image="neutral" interaction-prompt="none"></model-viewer>
+    <div class="stage-bar">
+      <div class="toggle" role="group" aria-label="Show version">
+        <button type="button" aria-pressed="false" data-src="models/cw2-v4.glb" data-alt="3D model of the Coursework 2 bike hanger">Coursework 2</button>
+        <button type="button" aria-pressed="true" data-src="models/cw3-v2.glb" data-alt="3D model of the optimised bike hanger">Optimised (CW3)</button>
+      </div>
+      <p class="hint">Drag to rotate · scroll or pinch to zoom</p>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section>
+    <h2>The brief</h2>
+    <div class="two">
+      <p class="lead">Design a single-part, 3D-printed bike support that bolts to a beam at three mounting points and keeps the bike off the ground.</p>
+      <p>Our three assigned points were vertically aligned. The hanger holds the top wheel of a 150 cm road bike, letting the bike lean against the beam, so it takes up little wall space and is easy to reach. Our aim was a structurally efficient part that carries the load through those three points while using as little material as possible.</p>
+    </div>
+    <ul class="compare" aria-label="Results summary">
+      <li>
+        <h3>Coursework 2</h3>
+        <dl>
+          <dt>Mass</dt><dd>82 g</dd>
+          <dt>Predicted failure</dt><dd>1779 N</dd>
+          <dt>Tested yield / failure</dt><dd>~1100 / ~1400 N</dd>
+        </dl>
+      </li>
+      <li>
+        <h3>Coursework 3, optimised</h3>
+        <dl>
+          <dt>Mass</dt><dd>27 g (−67%)</dd>
+          <dt>Predicted capacity</dt><dd>380 N</dd>
+          <dt>Tested peak load</dt><dd>355 N (within 6.6%)</dd>
+        </dl>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Coursework 2: design, simulate, test</h2>
+    <div class="two">
+      <div>
+        <p>We simulated a 200 N bike load on the two top surfaces that touch the wheel, with frictionless constraints on the bolt heads and shafts at all three mounting points and a finer mesh in high-stress areas.</p>
+        <p>The simulation gave a <strong>factor of safety of 8.9 at 200 N</strong>, a theoretical failure load of 1779 N. Peak stress was at the top bolt, and maximum displacement was only about 0.15 mm, near the hook.</p>
+      </div>
+      <div>
+        <p>To validate it, we tested a half-scale print upside down in a tension machine on a rig that replicates the beam, pulling through a pipe at the hook. It began yielding at about 1100 N (after about 400 N of slack) and failed at about 1400 N, an <strong>actual factor of safety of about 5.5</strong>.</p>
+        <p>The gap came from 3D-printing layer lines, which the simulation didn't model. It cracked along layer lines at two points, one of which matched a predicted high-stress area.</p>
+      </div>
+    </div>
+    <div class="pair">
+      <img src="images/cw2-stress.jpg" alt="Stress simulation, peak stress around the top bolt hole" loading="lazy">
+      <img src="images/cw2-displacement.jpg" alt="Displacement simulation, highest near the hook" loading="lazy">
+      <img src="images/cw2-graph.jpg" alt="Force versus displacement graph from the tensile test" loading="lazy">
+    </div>
+    <div class="mfg" style="margin-top:24px">
+      <img src="images/cw2-rig.jpg" alt="The tension test machine with the hanger mounted in the rig" loading="lazy" style="max-width:340px">
+      <div>
+        <h3>Where it broke</h3>
+        <p>Cracks formed along the printed layer lines. Without that layer-line weakness, failure would likely have happened closer to the simulated prediction.</p>
+        <img src="images/cw2-failure.jpg" alt="Yellow printed hanger after testing with failure points circled" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Coursework 3: digital optimisation</h2>
+    <p class="lead">Same three mounting points, same job, but with automated digital tools used to cut mass, material and cost.</p>
+    <div class="mfg">
+      <div>
+        <h3>1. Shape optimisation</h3>
+        <p>Fusion 360's Shape Optimisation found the low-stress regions that could go while keeping the required load capacity. We turned the generated mesh into a manufacturable part with thinner arms, smoother geometry and a much smaller back plate. The centre of the back plate added mass without adding strength, and removing it alone saved about 50 g.</p>
+        <p>Mass went from <strong>82 g to 28 g</strong>.</p>
+      </div>
+      <img src="images/cw3-models.jpg" alt="Model 1 (Coursework 2 design), the optimised mesh, and Model 3, the manufacturable result" loading="lazy">
+    </div>
+    <div class="mfg" style="margin-top:32px">
+      <img src="images/cw3-generative.jpg" alt="Generative design outcome, an organic dark blue hanger" loading="lazy" style="max-width:380px">
+      <div>
+        <h3>2. Generative design</h3>
+        <p>Starting from the shape-optimised part, we set preserve geometry (the three mounting points and the wheel support arms) and obstacle geometry (clearance for bolt heads and holes, the wheel rim, and a central cut-out). Generative design then minimised mass while keeping the structure working.</p>
+        <p>The chosen outcome weighs <strong>27 g</strong> with a factor of safety of 1.9, a predicted capacity of 380 N.</p>
+        <p>The simulation was set up with the 200 N load at 5°, matching the slightly off-centre test rig, a refined 1.9 mm mesh everywhere, and frictionless bolt constraints for a worst case that's still realistic.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Testing the optimised part</h2>
+    <div class="two">
+      <div>
+        <p>The load rose steadily to a <strong>peak of about 355 N</strong> at 7.9 mm displacement, within 6.6% of the 380 N prediction. Small drops on the graph line up with cracks forming one by one: first in the lower supports (points 1 and 2), then at the wheel support (point 3), and finally next to the bolt hole (point 4), right where the simulation predicted peak stress.</p>
+        <p>The close match between predicted and real failure validated the optimisation: two-thirds of the material was removed while the structure still performed.</p>
+      </div>
+      <img src="images/cw3-failure.jpg" alt="The optimised hanger after testing with four crack points circled" loading="lazy">
+    </div>
+    <div class="pair single">
+      <img src="images/cw3-graph.jpg" alt="Force versus displacement graph showing crack points 1 to 4" loading="lazy">
+    </div>
+    <div class="pivot">
+      <h3>What I'd do next</h3>
+      <ul>
+        <li>Model the anisotropic material properties of FDM prints, so layer-line weakness shows up in the simulation.</li>
+        <li>Test other print orientations to line the layers up with the main stress directions.</li>
+        <li>Add local reinforcement around the high-stress regions while keeping the mass savings.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Development</h2>
+    <p>Every version, from the first hook to the generative design. Each model can be rotated.</p>
+    <div class="versions">
+      <article class="version">
+        <model-viewer src="models/cw2-v1.glb" alt="3D model of CW2 version 1" camera-controls touch-action="pan-y" camera-orbit="-40deg 75deg auto" exposure="0.9" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>CW2 v1</h3>
+        <p>The first hook design, with cut-outs for the unused holes. Far too strong for the job, with a factor of safety around 1000.</p>
+      </article>
+      <article class="version">
+        <model-viewer src="models/cw2-v2.glb" alt="3D model of CW2 version 2" camera-controls touch-action="pan-y" camera-orbit="-40deg 75deg auto" exposure="0.9" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>CW2 v2</h3>
+        <p>Thinner walls and material removed to make it more efficient and easier to print, with refined mounting features.</p>
+      </article>
+      <article class="version">
+        <model-viewer src="models/cw2-v3.glb" alt="3D model of CW2 version 3" camera-controls touch-action="pan-y" camera-orbit="-40deg 75deg auto" exposure="0.9" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>CW2 v3</h3>
+        <p>A further iteration toward the final Coursework 2 design.</p>
+      </article>
+      <article class="version">
+        <model-viewer src="models/cw2-v4.glb" alt="3D model of CW2 version 4" camera-controls touch-action="pan-y" camera-orbit="-40deg 75deg auto" exposure="0.9" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>CW2 v4 <span class="tag">CW2 final</span></h3>
+        <p>The final Coursework 2 hanger.</p>
+      </article>
+      <article class="version">
+        <model-viewer src="models/cw3-v1.glb" alt="3D model of CW3 version 1, shape optimised" camera-controls touch-action="pan-y" camera-orbit="-40deg 75deg auto" exposure="0.9" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>CW3 v1 <span class="tag">shape optimised</span></h3>
+        <p>The manufacturable part built from the shape-optimisation mesh.</p>
+      </article>
+      <article class="version">
+        <model-viewer src="models/cw3-v2.glb" alt="3D model of CW3 version 2, generative design" camera-controls touch-action="pan-y" camera-orbit="-40deg 75deg auto" exposure="0.9" tone-mapping="neutral" loading="lazy" interaction-prompt="none"></model-viewer>
+        <h3>CW3 v2 <span class="tag">final</span></h3>
+        <p>The generative design outcome: 27 g, tested to 355 N.</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2>Folios</h2>
+    <p>Pages from both coursework folios. Click a page to open it.</p>
+    <div class="folio">
+      <a href="images/folio/cw2-2.jpg"><img src="images/folio/cw2-2.jpg" alt="CW2 folio: design intent and iterations" loading="lazy"></a>
+      <a href="images/folio/cw2-3.jpg"><img src="images/folio/cw2-3.jpg" alt="CW2 folio: design validation workflow" loading="lazy"></a>
+      <a href="images/folio/cw2-4.jpg"><img src="images/folio/cw2-4.jpg" alt="CW2 folio: simulation and testing" loading="lazy"></a>
+      <a href="images/folio/cw2-5.jpg"><img src="images/folio/cw2-5.jpg" alt="CW2 folio: stress and displacement" loading="lazy"></a>
+      <a href="images/folio/cw2-6.jpg"><img src="images/folio/cw2-6.jpg" alt="CW2 folio: technical drawing" loading="lazy"></a>
+      <a href="images/folio/cw3-3.jpg"><img src="images/folio/cw3-3.jpg" alt="CW3 folio: comparison to CW2" loading="lazy"></a>
+      <a href="images/folio/cw3-4.jpg"><img src="images/folio/cw3-4.jpg" alt="CW3 folio: simulation setup" loading="lazy"></a>
+      <a href="images/folio/cw3-5.jpg"><img src="images/folio/cw3-5.jpg" alt="CW3 folio: subtractive optimisation" loading="lazy"></a>
+      <a href="images/folio/cw3-6.jpg"><img src="images/folio/cw3-6.jpg" alt="CW3 folio: generative optimisation" loading="lazy"></a>
+      <a href="images/folio/cw3-7.jpg"><img src="images/folio/cw3-7.jpg" alt="CW3 folio: structural validation" loading="lazy"></a>
+      <a href="images/folio/cw3-8.jpg"><img src="images/folio/cw3-8.jpg" alt="CW3 folio: reflection and final outcome" loading="lazy"></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>CAD files</h2>
+    <ul class="files">
+      <li><a href="files/cw3-v2.step" download><span>Optimised hanger (CW3 final), STEP</span><span>165 KB</span></a></li>
+      <li><a href="files/cw3-v2.stl" download><span>Optimised hanger (CW3 final), STL</span><span>110 KB</span></a></li>
+      <li><a href="files/cw2-v4.step" download><span>Coursework 2 hanger with beam and plate, STEP</span><span>52 KB</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Team project with Hugh Thomas and Marcus Lum, PROD311, University of Canterbury.</p>
+    <p><a href="../../">← Back to all projects</a> · <a href="mailto:chungkevin104@gmail.com">chungkevin104@gmail.com</a></p>
+    <small>© 2026 Kevin Chung</small>
+  </div>
+</footer>
+
+<script>
+  const hero = document.getElementById('hero');
+  document.querySelectorAll('.toggle button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.toggle button').forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+      hero.src = btn.dataset.src;
+      hero.alt = btn.dataset.alt;
+    });
+  });
+</script>
+</body>
+</html>
