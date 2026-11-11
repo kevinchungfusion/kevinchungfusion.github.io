@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BottomsUp — Kevin Chung</title>
+<meta name="description" content="BottomsUp: a bottom-filling water dispenser that lets visually impaired and older users fill a cup without lifting or pouring hot water. Solo project, 2024.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<link rel="stylesheet" href="../project.css">
+<style>
+  .two > * { min-width: 0; }
+  .two img { width: 100%; height: auto; display: block; border-radius: 4px; }
+  .wide-img { width: 100%; height: auto; display: block; border-radius: 4px; margin-top: 24px; }
+  .results { list-style: none; padding: 0; margin: 0; }
+  .results li { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--grid); }
+  .results b { min-width: 120px; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="back" href="../../#work">← All projects</a>
+    <a class="name" href="../../">Kevin Chung</a>
+  </nav>
+
+  <header class="project">
+    <h1>BottomsUp</h1>
+    <p class="tagline">A water dispenser that fills the cup from underneath, so nobody has to lift a kettle or pour hot water.</p>
+    <ul class="facts">
+      <li>Solo project, 2024</li>
+      <li>Inclusive design</li>
+      <li>Waterjet-cut metal + oak</li>
+      <li>Fusion 360</li>
+    </ul>
+  </header>
+</div>
+
+<figure class="wrap hero-shot">
+  <img src="images/hero.jpg" alt="BottomsUp prototype: an oak and aluminium base with rotary dials and start/stop buttons, a green cup sitting on the nozzle" width="540" height="870" style="max-width:420px">
+  <figcaption>The finished prototype.</figcaption>
+</figure>
+
+<div class="stage" aria-label="3D model">
+  <div class="wrap">
+    <model-viewer id="hero" src="models/bottomsup.glb" alt="3D model of the BottomsUp dispenser"
+      camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="0" rotation-per-second="18deg"
+      camera-orbit="-30deg 60deg auto" shadow-intensity="0.9" shadow-softness="0.8" exposure="0.9" tone-mapping="neutral" environment-image="neutral" interaction-prompt="none"></model-viewer>
+    <div class="stage-bar"><p class="hint">Drag to rotate · scroll or pinch to zoom</p></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section>
+    <h2>The brief</h2>
+    <div class="two">
+      <p class="lead">Help visually impaired people get water safely, without spills or burns, with something that looks good in any kitchen.</p>
+      <div>
+        <p>Pouring from a kettle relies on sight, wrist strength and steady hands. The people I interviewed, including older users and people with limited vision, described hesitation, near-misses and spills. It also affects people with arthritis or Parkinson's.</p>
+        <p>BottomsUp flips the problem: place the cup, pick a temperature and amount, press start, and the cup <strong>fills from the bottom</strong>, through a sealed base that opens on the nozzle and closes again when lifted.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Research</h2>
+    <div class="two">
+      <div>
+        <p>I photographed every step of making tea to see where things go wrong, then designed against seven principles for low-vision users: <strong>comprehension, tactile, adjustment, simplicity, safety, social and budget</strong>.</p>
+        <p>Research into controls for older users set the interface:</p>
+      </div>
+      <ul class="results" aria-label="Interface research">
+        <li><b>Press force</b><span>1.2–2.5 N, softer than standard switches, for arthritic hands</span></li>
+        <li><b>Button travel</b><span>1.0–2.5 mm for clear feedback without strain</span></li>
+        <li><b>Rotary dials</b><span>25–100 mm long, about 50° between settings</span></li>
+        <li><b>Push buttons</b><span>10–25 mm diameter, about 50 mm apart</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Prototypes</h2>
+    <div class="two">
+      <div>
+        <p><strong>Prototype 1</strong> had awkward button placement, no drainage, too much surface area and a plain cup. I angled the button panel, added drainage channels and refined the cup.</p>
+        <p><strong>Prototype 2</strong> still needed better drainage, and testers found the buttons confusing. Feedback asked for <strong>dials</strong> for water level and temperature and separate <strong>start/stop buttons</strong>, so I moved from push buttons to rotary dials.</p>
+        <p>The final controls take cues from a smart thermostat and the Teenage Engineering OP-1: grooved dials with coloured caps, a green "start" line and a red "stop" circle that you can feel as well as see.</p>
+      </div>
+      <img src="images/photos-strip.jpg" alt="Three photos of the finished BottomsUp prototype" loading="lazy">
+    </div>
+  </section>
+
+  <section>
+    <h2>Making it</h2>
+    <div class="two">
+      <p>The body is waterjet-cut sheet aluminium, filed, bent and tack-welded, with a perforated drip tray. It sits in a red oak frame with guide rails, sanded and finished. The dials, buttons and nozzle are 3D printed and painted.</p>
+      <p>Inside, the full product would use a heating element with a thermostat capped at a safe 45–50 °C, a solenoid valve, a flow meter to stop at the chosen amount, and a pressure regulator for a slow, splash-free fill.</p>
+    </div>
+    <img class="wide-img" src="images/making.jpg" alt="Eight-step making process: cutting wood, waterjet cutting, filing, welding, assembling, sanding, painting, final assembly" loading="lazy">
+  </section>
+
+  <section>
+    <h2>Portfolio</h2>
+    <p>Pages from my portfolio. Click a page to open it.</p>
+    <div class="folio">
+      <a href="images/folio/how-to-make-tea.jpg"><img src="images/folio/how-to-make-tea.jpg" alt="How to make tea, step by step" loading="lazy"></a>
+      <a href="images/folio/design-principles.jpg"><img src="images/folio/design-principles.jpg" alt="7 design principles" loading="lazy"></a>
+      <a href="images/folio/ideation-1.jpg"><img src="images/folio/ideation-1.jpg" alt="Ideation 1" loading="lazy"></a>
+      <a href="images/folio/ideation-2.jpg"><img src="images/folio/ideation-2.jpg" alt="Ideation 2" loading="lazy"></a>
+      <a href="images/folio/ideation-3.jpg"><img src="images/folio/ideation-3.jpg" alt="Ideation 3" loading="lazy"></a>
+      <a href="images/folio/prototype-1.jpg"><img src="images/folio/prototype-1.jpg" alt="Prototype 1 evaluation" loading="lazy"></a>
+      <a href="images/folio/prototype-2.jpg"><img src="images/folio/prototype-2.jpg" alt="Prototype 2 evaluation" loading="lazy"></a>
+      <a href="images/folio/drawing-parts.jpg"><img src="images/folio/drawing-parts.jpg" alt="Parts list drawing" loading="lazy"></a>
+      <a href="images/folio/drawing-general.jpg"><img src="images/folio/drawing-general.jpg" alt="General dimension drawing" loading="lazy"></a>
+      <a href="images/folio/drawing-sheet-metal.jpg"><img src="images/folio/drawing-sheet-metal.jpg" alt="Sheet metal drawing" loading="lazy"></a>
+      <a href="images/folio/drawing-buttons.jpg"><img src="images/folio/drawing-buttons.jpg" alt="Buttons drawing" loading="lazy"></a>
+      <a href="images/folio/making.jpg"><img src="images/folio/making.jpg" alt="Making process" loading="lazy"></a>
+      <a href="images/folio/principles-review.jpg"><img src="images/folio/principles-review.jpg" alt="7 principles review" loading="lazy"></a>
+      <a href="images/folio/final.jpg"><img src="images/folio/final.jpg" alt="Final product photos" loading="lazy"></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>CAD files</h2>
+    <ul class="files">
+      <li><a href="files/bottomsup.step" download><span>BottomsUp, STEP</span><span>1.5 MB</span></a></li>
+      <li><a href="files/bottomsup-drawings.pdf" download><span>Technical drawings, PDF (7 sheets)</span><span>2.2 MB</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Solo project, University of Canterbury, 2024.</p>
+    <p><a href="../../">← Back to all projects</a> · <a href="mailto:chungkevin104@gmail.com">chungkevin104@gmail.com</a></p>
+    <small>© 2026 Kevin Chung</small>
+  </div>
+</footer>
+</body>
+</html>
