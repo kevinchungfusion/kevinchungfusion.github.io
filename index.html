@@ -110,8 +110,21 @@
   .year { font-size: 1.25rem; margin: 48px 0 16px; padding-top: 16px; border-top: 2px solid var(--green); color: var(--green); }
   .grid { display: grid; gap: 28px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
   .card .shot { aspect-ratio: 4 / 3; }
-  .card-body { position: relative; padding: 12px 0 0 34px; }
-  .num { position: absolute; left: 0; top: 12px; font-weight: 800; font-size: 1.35rem; line-height: 1.2; color: var(--green); }
+  .card-body { padding: 12px 0 0; }
+  .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 28px; border-bottom: 2px solid var(--green); }
+  .tabs button {
+    font: inherit; font-weight: 700; font-size: 1.1rem; cursor: pointer;
+    background: none; color: var(--muted); border: 2px solid transparent; border-bottom: 0;
+    padding: 10px 18px; margin-bottom: -2px; border-radius: 6px 6px 0 0;
+  }
+  .tabs button span { font-weight: 500; font-size: .85rem; margin-left: 4px; opacity: .75; }
+  .tabs button:hover { color: var(--ink); }
+  .tabs button[aria-selected="true"] { color: var(--green); background: var(--mat); border-color: var(--green); }
+  .tabs button:focus-visible { outline: 3px solid var(--tape); outline-offset: 2px; }
+  .card .shot img { transition: transform .25s ease; }
+  .card .shot { overflow: hidden; }
+  .card:hover .shot img { transform: scale(1.03); }
+  @media (prefers-reduced-motion: reduce) { .card .shot img { transition: none; } }
   .card h4 { margin: 0; font-size: 1.15rem; line-height: 1.3; }
   .note { margin: 2px 0 0; color: var(--muted); font-size: .95rem; }
   .soon { display: inline-block; margin-top: 10px; font-size: .85rem; background: var(--tape); color: #18201b; padding: 1px 8px; transform: rotate(-1deg); }
@@ -155,146 +168,128 @@
 <main>
   <section id="work" class="wrap">
     <h2>Work</h2>
-    <p class="intro">Projects from first year to now, oldest first. Each one will link to its GitHub repo, where you can spin the 3D models and download the CAD files.</p>
+    <p class="intro">Newest first. Pick a year, then open a project to spin the 3D models, see each version and download the CAD files.</p>
 
-    <h3 class="year">Year 1</h3>
-    <div class="grid">
-      <!-- Project 1: when ready, swap the placeholder for <img src="images/1.jpg" alt="..."> and the "soon" span for <a class="btn" href="https://github.com/leangymfusion/REPO">View on GitHub</a> -->
-      <article class="card">
-        <a class="shot has-img" href="projects/glasses/#stand"><img src="projects/glasses/images/card-stand.jpg" alt="Slot-together flat glasses stand" loading="lazy"></a>
-        <div class="card-body">
-          <span class="num">1</span>
-          <h4><a href="projects/glasses/#stand">Glasses stand</a></h4>
-          <p class="note">Two flat profiles that slot together</p>
-          <a class="btn" href="projects/glasses/#stand">View project</a>
-        </div>
-      </article>
-      <!-- Project 2: when ready, swap the placeholder for <img src="images/2.jpg" alt="..."> and the "soon" span for <a class="btn" href="https://github.com/leangymfusion/REPO">View on GitHub</a> -->
-      <article class="card">
-        <a class="shot has-img" href="projects/glasses/#glasses"><img src="projects/glasses/images/card-glasses.jpg" alt="Parametric sunglasses 3D model" loading="lazy"></a>
-        <div class="card-body">
-          <span class="num">2</span>
-          <h4><a href="projects/glasses/#glasses">Sunglasses</a></h4>
-          <p class="note">Fully parametric in Fusion 360</p>
-          <a class="btn" href="projects/glasses/#glasses">View project</a>
-        </div>
-      </article>
-      <article class="card">
-        <a class="shot has-img" href="projects/bottomsup/"><img src="projects/bottomsup/images/card.jpg" alt="BottomsUp bottom-filling water dispenser prototype" loading="lazy"></a>
-        <div class="card-body">
-          <span class="num">2b</span>
-          <h4><a href="projects/bottomsup/">BottomsUp</a></h4>
-          <p class="note">Bottom-filling water dispenser for low vision</p>
-          <a class="btn" href="projects/bottomsup/">View project</a>
-        </div>
-      </article>
+    <div class="tabs" role="tablist" aria-label="Projects by year">
+      <button type="button" role="tab" id="tab-3" aria-controls="year-3" aria-selected="true">Year 3 <span>3</span></button>
+      <button type="button" role="tab" id="tab-2" aria-controls="year-2" aria-selected="false" tabindex="-1">Year 2 <span>7</span></button>
+      <button type="button" role="tab" id="tab-1" aria-controls="year-1" aria-selected="false" tabindex="-1">Year 1 <span>3</span></button>
     </div>
-
-    <h3 class="year">Year 2</h3>
-    <div class="grid">
-      <!-- Project 3: when ready, swap the placeholder for <img src="images/3.jpg" alt="..."> and the "soon" span for <a class="btn" href="https://github.com/leangymfusion/REPO">View on GitHub</a> -->
+    <div class="panel" role="tabpanel" id="year-3" aria-labelledby="tab-3">
+      <div class="grid">
       <article class="card">
-        <a class="shot has-img" href="projects/desk-organiser/"><img src="projects/desk-organiser/images/card.jpg" alt="Blue rotating cup desk organiser render" loading="lazy"></a>
+        <a class="shot has-img" href="projects/flatmate/"><img src="projects/flatmate/images/card.jpg" alt="Flatmate chair 3D model" loading="lazy"></a>
         <div class="card-body">
-          <span class="num">3</span>
-          <h4><a href="projects/desk-organiser/">Modular desk organiser</a></h4>
-          <p class="note">Designed for injection moulding</p>
-          <a class="btn" href="projects/desk-organiser/">View project</a>
+          <h4><a href="projects/flatmate/">Flatmate chair</a></h4>
+          <p class="note">Capstone · SaveBoard flat-pack chair</p>
+          <a class="btn" href="projects/flatmate/">View project</a>
         </div>
       </article>
-      <!-- Project 4: when ready, swap the placeholder for <img src="images/4.jpg" alt="..."> and the "soon" span for <a class="btn" href="https://github.com/leangymfusion/REPO">View on GitHub</a> -->
       <article class="card">
-        <a class="shot has-img" href="projects/glasses-case/"><img src="projects/glasses-case/images/card.jpg" alt="Clear acrylic telescopic glasses case render" loading="lazy"></a>
+        <a class="shot has-img" href="projects/bike-hanger/"><img src="projects/bike-hanger/images/card.jpg" alt="Optimised 3D-printed bike hanger holding a mountain bike wheel" loading="lazy"></a>
         <div class="card-body">
-          <span class="num">4</span>
-          <h4><a href="projects/glasses-case/">Glasses case</a></h4>
-          <p class="note">Laser-cut and line-bent acrylic</p>
-          <a class="btn" href="projects/glasses-case/">View project</a>
+          <h4><a href="projects/bike-hanger/">Bike hanger</a></h4>
+          <p class="note">Simulated, tested, then optimised: 67% lighter</p>
+          <a class="btn" href="projects/bike-hanger/">View project</a>
         </div>
       </article>
-      <!-- Project 5: when ready, swap the placeholder for <img src="images/5.jpg" alt="..."> and the "soon" span for <a class="btn" href="https://github.com/leangymfusion/REPO">View on GitHub</a> -->
       <article class="card">
-        <a class="shot has-img" href="projects/extrusion/"><img src="projects/extrusion/images/card.jpg" alt="Extruded clay modules assembled into a panel" loading="lazy"></a>
+        <a class="shot has-img" href="projects/magsafe-charger/"><img src="projects/magsafe-charger/images/card.jpg" alt="Rimu and aluminium MagSafe charging stand" loading="lazy"></a>
         <div class="card-body">
-          <span class="num">5</span>
-          <h4><a href="projects/extrusion/">Clay extrusion screen</a></h4>
-          <p class="note">3D-printed die, tessellating module</p>
-          <a class="btn" href="projects/extrusion/">View project</a>
+          <h4><a href="projects/magsafe-charger/">MagSafe charging stand</a></h4>
+          <p class="note">CNC Rimu + waterjet aluminium</p>
+          <a class="btn" href="projects/magsafe-charger/">View project</a>
         </div>
       </article>
-      <!-- Project 6: when ready, swap the placeholder for <img src="images/6.jpg" alt="..."> and the "soon" span for <a class="btn" href="https://github.com/leangymfusion/REPO">View on GitHub</a> -->
+      </div>
+    </div>
+    <div class="panel" role="tabpanel" id="year-2" aria-labelledby="tab-2" hidden>
+      <div class="grid">
       <article class="card">
-        <a class="shot has-img" href="projects/playground/"><img src="projects/playground/images/card.jpg" alt="Twizel Tubes playground puzzle render" loading="lazy"></a>
+        <a class="shot has-img" href="projects/bike-light/"><img src="projects/bike-light/images/card.jpg" alt="Aerostream teardrop bike light render" loading="lazy"></a>
         <div class="card-body">
-          <span class="num">6</span>
-          <h4><a href="projects/playground/">Twizel Tubes playground</a></h4>
-          <p class="note">Sliding pipe puzzle about hydro power</p>
-          <a class="btn" href="projects/playground/">View project</a>
+          <h4><a href="projects/bike-light/">Aerostream bike light</a></h4>
+          <p class="note">CFD + thermal simulation, 3 versions</p>
+          <a class="btn" href="projects/bike-light/">View project</a>
         </div>
       </article>
-      <!-- Project 7: when ready, swap the placeholder for <img src="images/7.jpg" alt="..."> and the "soon" span for <a class="btn" href="https://github.com/leangymfusion/REPO">View on GitHub</a> -->
-      <article class="card">
-        <a class="shot has-img" href="projects/medfold/"><img src="projects/medfold/images/card.jpg" alt="MEDFOLD folding chair render" loading="lazy"></a>
-        <div class="card-body">
-          <span class="num">7</span>
-          <h4><a href="projects/medfold/">MEDFOLD chair</a></h4>
-          <p class="note">Folding chair for hospital rooms</p>
-          <a class="btn" href="projects/medfold/">View project</a>
-        </div>
-      </article>
-      <!-- Project 8: when ready, swap the placeholder for <img src="images/8.jpg" alt="..."> and the "soon" span for <a class="btn" href="https://github.com/leangymfusion/REPO">View on GitHub</a> -->
       <article class="card">
         <a class="shot has-img" href="projects/shin-guards/"><img src="projects/shin-guards/images/card.jpg" alt="Recycled HDPE and EVA shin guard" loading="lazy"></a>
         <div class="card-body">
-          <span class="num">8</span>
           <h4><a href="projects/shin-guards/">Re:Form shin guards</a></h4>
           <p class="note">Recycled EVA footwear + HDPE caps</p>
           <a class="btn" href="projects/shin-guards/">View project</a>
         </div>
       </article>
       <article class="card">
-        <a class="shot has-img" href="projects/bike-light/"><img src="projects/bike-light/images/card.jpg" alt="Aerostream teardrop bike light render" loading="lazy"></a>
+        <a class="shot has-img" href="projects/medfold/"><img src="projects/medfold/images/card.jpg" alt="MEDFOLD folding chair render" loading="lazy"></a>
         <div class="card-body">
-          <span class="num">8b</span>
-          <h4><a href="projects/bike-light/">Aerostream bike light</a></h4>
-          <p class="note">CFD + thermal simulation, 3 versions</p>
-          <a class="btn" href="projects/bike-light/">View project</a>
+          <h4><a href="projects/medfold/">MEDFOLD chair</a></h4>
+          <p class="note">Folding chair for hospital rooms</p>
+          <a class="btn" href="projects/medfold/">View project</a>
         </div>
       </article>
+      <article class="card">
+        <a class="shot has-img" href="projects/playground/"><img src="projects/playground/images/card.jpg" alt="Twizel Tubes playground puzzle render" loading="lazy"></a>
+        <div class="card-body">
+          <h4><a href="projects/playground/">Twizel Tubes playground</a></h4>
+          <p class="note">Sliding pipe puzzle about hydro power</p>
+          <a class="btn" href="projects/playground/">View project</a>
+        </div>
+      </article>
+      <article class="card">
+        <a class="shot has-img" href="projects/extrusion/"><img src="projects/extrusion/images/card.jpg" alt="Extruded clay modules assembled into a panel" loading="lazy"></a>
+        <div class="card-body">
+          <h4><a href="projects/extrusion/">Clay extrusion screen</a></h4>
+          <p class="note">3D-printed die, tessellating module</p>
+          <a class="btn" href="projects/extrusion/">View project</a>
+        </div>
+      </article>
+      <article class="card">
+        <a class="shot has-img" href="projects/glasses-case/"><img src="projects/glasses-case/images/card.jpg" alt="Clear acrylic telescopic glasses case render" loading="lazy"></a>
+        <div class="card-body">
+          <h4><a href="projects/glasses-case/">Glasses case</a></h4>
+          <p class="note">Laser-cut and line-bent acrylic</p>
+          <a class="btn" href="projects/glasses-case/">View project</a>
+        </div>
+      </article>
+      <article class="card">
+        <a class="shot has-img" href="projects/desk-organiser/"><img src="projects/desk-organiser/images/card.jpg" alt="Blue rotating cup desk organiser render" loading="lazy"></a>
+        <div class="card-body">
+          <h4><a href="projects/desk-organiser/">Modular desk organiser</a></h4>
+          <p class="note">Designed for injection moulding</p>
+          <a class="btn" href="projects/desk-organiser/">View project</a>
+        </div>
+      </article>
+      </div>
     </div>
-
-    <h3 class="year">Year 3</h3>
-    <div class="grid">
-      <!-- Project 9: when ready, swap the placeholder for <img src="images/9.jpg" alt="..."> and the "soon" span for <a class="btn" href="https://github.com/leangymfusion/REPO">View on GitHub</a> -->
+    <div class="panel" role="tabpanel" id="year-1" aria-labelledby="tab-1" hidden>
+      <div class="grid">
       <article class="card">
-        <a class="shot has-img" href="projects/magsafe-charger/"><img src="projects/magsafe-charger/images/card.jpg" alt="Rimu and aluminium MagSafe charging stand" loading="lazy"></a>
+        <a class="shot has-img" href="projects/bottomsup/"><img src="projects/bottomsup/images/card.jpg" alt="BottomsUp bottom-filling water dispenser prototype" loading="lazy"></a>
         <div class="card-body">
-          <span class="num">9</span>
-          <h4><a href="projects/magsafe-charger/">MagSafe charging stand</a></h4>
-          <p class="note">CNC Rimu + waterjet aluminium</p>
-          <a class="btn" href="projects/magsafe-charger/">View project</a>
+          <h4><a href="projects/bottomsup/">BottomsUp</a></h4>
+          <p class="note">Bottom-filling water dispenser for low vision</p>
+          <a class="btn" href="projects/bottomsup/">View project</a>
         </div>
       </article>
-      <!-- Project 10: when ready, swap the placeholder for <img src="images/10.jpg" alt="..."> and the "soon" span for <a class="btn" href="https://github.com/leangymfusion/REPO">View on GitHub</a> -->
       <article class="card">
-        <a class="shot has-img" href="projects/bike-hanger/"><img src="projects/bike-hanger/images/card.jpg" alt="Optimised 3D-printed bike hanger holding a mountain bike wheel" loading="lazy"></a>
+        <a class="shot has-img" href="projects/glasses/#glasses"><img src="projects/glasses/images/card-glasses.jpg" alt="Parametric sunglasses 3D model" loading="lazy"></a>
         <div class="card-body">
-          <span class="num">10</span>
-          <h4><a href="projects/bike-hanger/">Bike hanger</a></h4>
-          <p class="note">Simulated, tested, then optimised: 67% lighter</p>
-          <a class="btn" href="projects/bike-hanger/">View project</a>
+          <h4><a href="projects/glasses/#glasses">Sunglasses</a></h4>
+          <p class="note">Fully parametric in Fusion 360</p>
+          <a class="btn" href="projects/glasses/#glasses">View project</a>
         </div>
       </article>
-      <!-- Project 11: when ready, swap the placeholder for <img src="images/11.jpg" alt="..."> and the "soon" span for <a class="btn" href="https://github.com/leangymfusion/REPO">View on GitHub</a> -->
       <article class="card">
-        <a class="shot has-img" href="projects/flatmate/"><img src="projects/flatmate/images/card.jpg" alt="Flatmate chair 3D model" loading="lazy"></a>
+        <a class="shot has-img" href="projects/glasses/#stand"><img src="projects/glasses/images/card-stand.jpg" alt="Slot-together flat glasses stand" loading="lazy"></a>
         <div class="card-body">
-          <span class="num">11</span>
-          <h4><a href="projects/flatmate/">Flatmate chair</a></h4>
-          <p class="note">Capstone · SaveBoard flat-pack chair</p>
-          <a class="btn" href="projects/flatmate/">View project</a>
+          <h4><a href="projects/glasses/#stand">Glasses stand</a></h4>
+          <p class="note">Two flat profiles that slot together</p>
+          <a class="btn" href="projects/glasses/#stand">View project</a>
         </div>
       </article>
+      </div>
     </div>
   </section>
 
@@ -321,12 +316,34 @@
     <ul>
       <li><a href="mailto:chungkevin104@gmail.com">chungkevin104@gmail.com</a></li>
       <li><a href="https://www.linkedin.com/in/kevin-chung104">LinkedIn</a></li>
-      <li><a href="https://github.com/leangymfusion">GitHub</a></li>
+      <li><a href="https://github.com/kevinchungfusion">GitHub</a></li>
       <li><a href="cv.pdf">Download CV</a></li>
     </ul>
     <small>© 2026 Kevin Chung</small>
   </div>
 </footer>
+
+<script>
+  const tabs = [...document.querySelectorAll('[role="tab"]')];
+  function show(tab, focus) {
+    tabs.forEach(t => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', on);
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    if (focus) tab.focus();
+  }
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => { show(t); history.replaceState(null, '', '#' + t.getAttribute('aria-controls')); });
+    t.addEventListener('keydown', e => {
+      const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (d) { const n = tabs[(i + d + tabs.length) % tabs.length]; show(n, true); history.replaceState(null, '', '#' + n.getAttribute('aria-controls')); }
+    });
+  });
+  const fromHash = tabs.find(t => '#' + t.getAttribute('aria-controls') === location.hash);
+  if (fromHash) { show(fromHash); document.getElementById('work').scrollIntoView(); }
+</script>
 
 </body>
 </html>
