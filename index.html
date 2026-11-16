@@ -134,6 +134,7 @@
   .about { display: grid; gap: 32px; }
   @media (min-width: 760px) { .about { grid-template-columns: 1fr 1fr; gap: 64px; } }
   .about p { max-width: 52ch; margin: 0 0 14px; }
+  .headshot { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; display: block; margin: 0 0 20px; border: 1px solid var(--grid); }
   .skills { list-style: none; padding: 0; margin: 0; }
   .skills li { padding: 10px 0; border-bottom: 1px solid var(--grid); display: flex; justify-content: space-between; gap: 16px; }
   .skills li span:last-child { color: var(--muted); text-align: right; }
@@ -296,6 +297,7 @@
   <section id="about" class="wrap">
     <div class="about">
       <div>
+        <img class="headshot" src="img/kevin.jpg" alt="Kevin Chung" width="140" height="140" loading="lazy">
         <h2>About</h2>
         <p>I'm an industrial product designer graduating from the University of Canterbury in 2026, with over six years of CAD experience. I focus on mechanisms, rapid prototyping and human-centred problem solving.</p>
         <p>I'm driven by real-world problems, especially for people facing mobility limits, strength challenges or tight spaces. I want to design products that are mechanically sound and genuinely improve how people interact with their environment.</p>
